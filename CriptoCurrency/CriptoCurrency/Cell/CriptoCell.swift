@@ -34,12 +34,23 @@ class CriptoCell: UITableViewCell {
     }
 
     func configureCell(with coins: Coin) {
-        currencyShortName.text = coins.symbol
-        currencyFullName.text = coins.name
+        if let color = coins.color {
+            currencyFullName.textColor = colorFromHex(hex: color)
+        }
+        if let change = coins.change {
+            if change.contains("-") {
+                changeOfCurrency.textColor = .systemRed
+            } else {
+                changeOfCurrency.textColor = .systemGreen
+            }
+        }
         if let price = coins.price {
             let priceDouble = Double(price)
             currencyValue.text = String(format: "$%.5f", priceDouble!)
         }
+
+        currencyShortName.text = coins.symbol
+        currencyFullName.text = coins.name
         changeOfCurrency.text = "\(coins.change ?? "")"
 
         if var iconURLString = coins.iconURL, var iconURL = URL(string: iconURLString) {

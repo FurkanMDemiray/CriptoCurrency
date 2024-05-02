@@ -23,6 +23,7 @@
 		DD16A33B2BE3BCB800C1797C /* Base in Resources */ = {isa = PBXBuildFile; fileRef = DD16A33A2BE3BCB800C1797C /* Base */; };
 		DDBDA88C2BE4198500C3570A /* SVGKit in Frameworks */ = {isa = PBXBuildFile; productRef = DDBDA88B2BE4198500C3570A /* SVGKit */; };
 		DDBDA88E2BE4198500C3570A /* SVGKitSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DDBDA88D2BE4198500C3570A /* SVGKitSwift */; };
+		DDBDA8942BE4320C00C3570A /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBDA8932BE4320C00C3570A /* ColorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		DD16A3372BE3BCB800C1797C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD16A33A2BE3BCB800C1797C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD16A33C2BE3BCB800C1797C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDBDA8932BE4320C00C3570A /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 		DD16A32D2BE3BCB700C1797C /* CriptoCurrency */ = {
 			isa = PBXGroup;
 			children = (
+				DDBDA8922BE4320100C3570A /* Extension */,
 				DD060C9D2BE3BE7E00D3FCFC /* Cell */,
 				DD060C9C2BE3BE5500D3FCFC /* Service */,
 				DD060C992BE3BE4300D3FCFC /* Model */,
@@ -130,6 +133,14 @@
 				DD16A33C2BE3BCB800C1797C /* Info.plist */,
 			);
 			path = CriptoCurrency;
+			sourceTree = "<group>";
+		};
+		DDBDA8922BE4320100C3570A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				DDBDA8932BE4320C00C3570A /* ColorExtension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,6 +230,7 @@
 				DD060CAD2BE3C40D00D3FCFC /* CriptoService.swift in Sources */,
 				DD060CAB2BE3C1FB00D3FCFC /* CriptoCurrency.swift in Sources */,
 				DD060CA82BE3BF5600D3FCFC /* CriptoCell.swift in Sources */,
+				DDBDA8942BE4320C00C3570A /* ColorExtension.swift in Sources */,
 				DD060CAF2BE3C75E00D3FCFC /* CriptoViewModel.swift in Sources */,
 				DD16A3332BE3BCB700C1797C /* ViewController.swift in Sources */,
 				DD16A32F2BE3BCB700C1797C /* AppDelegate.swift in Sources */,
