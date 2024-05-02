@@ -13,6 +13,8 @@
 		DD060CA82BE3BF5600D3FCFC /* CriptoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD060CA62BE3BF5600D3FCFC /* CriptoCell.swift */; };
 		DD060CA92BE3BF5600D3FCFC /* CriptoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD060CA72BE3BF5600D3FCFC /* CriptoCell.xib */; };
 		DD060CAB2BE3C1FB00D3FCFC /* CriptoCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD060CAA2BE3C1FB00D3FCFC /* CriptoCurrency.swift */; };
+		DD060CAD2BE3C40D00D3FCFC /* CriptoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD060CAC2BE3C40D00D3FCFC /* CriptoService.swift */; };
+		DD060CAF2BE3C75E00D3FCFC /* CriptoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD060CAE2BE3C75E00D3FCFC /* CriptoViewModel.swift */; };
 		DD16A32F2BE3BCB700C1797C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD16A32E2BE3BCB700C1797C /* AppDelegate.swift */; };
 		DD16A3312BE3BCB700C1797C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD16A3302BE3BCB700C1797C /* SceneDelegate.swift */; };
 		DD16A3332BE3BCB700C1797C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD16A3322BE3BCB700C1797C /* ViewController.swift */; };
@@ -25,6 +27,8 @@
 		DD060CA62BE3BF5600D3FCFC /* CriptoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriptoCell.swift; sourceTree = "<group>"; };
 		DD060CA72BE3BF5600D3FCFC /* CriptoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CriptoCell.xib; sourceTree = "<group>"; };
 		DD060CAA2BE3C1FB00D3FCFC /* CriptoCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriptoCurrency.swift; sourceTree = "<group>"; };
+		DD060CAC2BE3C40D00D3FCFC /* CriptoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriptoService.swift; sourceTree = "<group>"; };
+		DD060CAE2BE3C75E00D3FCFC /* CriptoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriptoViewModel.swift; sourceTree = "<group>"; };
 		DD16A32B2BE3BCB700C1797C /* CriptoCurrency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CriptoCurrency.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD16A32E2BE3BCB700C1797C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD16A3302BE3BCB700C1797C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +74,7 @@
 		DD060C9B2BE3BE5100D3FCFC /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				DD060CAE2BE3C75E00D3FCFC /* CriptoViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -77,6 +82,7 @@
 		DD060C9C2BE3BE5500D3FCFC /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				DD060CAC2BE3C40D00D3FCFC /* CriptoService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -203,8 +209,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD060CAD2BE3C40D00D3FCFC /* CriptoService.swift in Sources */,
 				DD060CAB2BE3C1FB00D3FCFC /* CriptoCurrency.swift in Sources */,
 				DD060CA82BE3BF5600D3FCFC /* CriptoCell.swift in Sources */,
+				DD060CAF2BE3C75E00D3FCFC /* CriptoViewModel.swift in Sources */,
 				DD16A3332BE3BCB700C1797C /* ViewController.swift in Sources */,
 				DD16A32F2BE3BCB700C1797C /* AppDelegate.swift in Sources */,
 				DD16A3312BE3BCB700C1797C /* SceneDelegate.swift in Sources */,
