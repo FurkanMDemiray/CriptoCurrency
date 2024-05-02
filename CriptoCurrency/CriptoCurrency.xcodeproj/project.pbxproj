@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD060CA02BE3BEFC00D3FCFC /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = DD060C9F2BE3BEFC00D3FCFC /* Alamofire */; };
+		DD060CA22BE3BEFC00D3FCFC /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = DD060CA12BE3BEFC00D3FCFC /* AlamofireDynamic */; };
+		DD060CA52BE3BF3900D3FCFC /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = DD060CA42BE3BF3900D3FCFC /* Kingfisher */; };
+		DD060CA82BE3BF5600D3FCFC /* CriptoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD060CA62BE3BF5600D3FCFC /* CriptoCell.swift */; };
+		DD060CA92BE3BF5600D3FCFC /* CriptoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD060CA72BE3BF5600D3FCFC /* CriptoCell.xib */; };
+		DD060CAB2BE3C1FB00D3FCFC /* CriptoCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD060CAA2BE3C1FB00D3FCFC /* CriptoCurrency.swift */; };
 		DD16A32F2BE3BCB700C1797C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD16A32E2BE3BCB700C1797C /* AppDelegate.swift */; };
 		DD16A3312BE3BCB700C1797C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD16A3302BE3BCB700C1797C /* SceneDelegate.swift */; };
 		DD16A3332BE3BCB700C1797C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD16A3322BE3BCB700C1797C /* ViewController.swift */; };
@@ -16,6 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DD060CA62BE3BF5600D3FCFC /* CriptoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriptoCell.swift; sourceTree = "<group>"; };
+		DD060CA72BE3BF5600D3FCFC /* CriptoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CriptoCell.xib; sourceTree = "<group>"; };
+		DD060CAA2BE3C1FB00D3FCFC /* CriptoCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriptoCurrency.swift; sourceTree = "<group>"; };
 		DD16A32B2BE3BCB700C1797C /* CriptoCurrency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CriptoCurrency.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD16A32E2BE3BCB700C1797C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD16A3302BE3BCB700C1797C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,12 +40,56 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD060CA52BE3BF3900D3FCFC /* Kingfisher in Frameworks */,
+				DD060CA02BE3BEFC00D3FCFC /* Alamofire in Frameworks */,
+				DD060CA22BE3BEFC00D3FCFC /* AlamofireDynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DD060C992BE3BE4300D3FCFC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DD060CAA2BE3C1FB00D3FCFC /* CriptoCurrency.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DD060C9A2BE3BE4900D3FCFC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DD16A32E2BE3BCB700C1797C /* AppDelegate.swift */,
+				DD16A3302BE3BCB700C1797C /* SceneDelegate.swift */,
+				DD16A3322BE3BCB700C1797C /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DD060C9B2BE3BE5100D3FCFC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DD060C9C2BE3BE5500D3FCFC /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		DD060C9D2BE3BE7E00D3FCFC /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				DD060CA62BE3BF5600D3FCFC /* CriptoCell.swift */,
+				DD060CA72BE3BF5600D3FCFC /* CriptoCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		DD16A3222BE3BCB700C1797C = {
 			isa = PBXGroup;
 			children = (
@@ -56,9 +109,11 @@
 		DD16A32D2BE3BCB700C1797C /* CriptoCurrency */ = {
 			isa = PBXGroup;
 			children = (
-				DD16A32E2BE3BCB700C1797C /* AppDelegate.swift */,
-				DD16A3302BE3BCB700C1797C /* SceneDelegate.swift */,
-				DD16A3322BE3BCB700C1797C /* ViewController.swift */,
+				DD060C9D2BE3BE7E00D3FCFC /* Cell */,
+				DD060C9C2BE3BE5500D3FCFC /* Service */,
+				DD060C992BE3BE4300D3FCFC /* Model */,
+				DD060C9B2BE3BE5100D3FCFC /* ViewModel */,
+				DD060C9A2BE3BE4900D3FCFC /* View */,
 				DD16A3342BE3BCB700C1797C /* Main.storyboard */,
 				DD16A3372BE3BCB800C1797C /* Assets.xcassets */,
 				DD16A3392BE3BCB800C1797C /* LaunchScreen.storyboard */,
@@ -83,6 +138,11 @@
 			dependencies = (
 			);
 			name = CriptoCurrency;
+			packageProductDependencies = (
+				DD060C9F2BE3BEFC00D3FCFC /* Alamofire */,
+				DD060CA12BE3BEFC00D3FCFC /* AlamofireDynamic */,
+				DD060CA42BE3BF3900D3FCFC /* Kingfisher */,
+			);
 			productName = CriptoCurrency;
 			productReference = DD16A32B2BE3BCB700C1797C /* CriptoCurrency.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +171,10 @@
 				Base,
 			);
 			mainGroup = DD16A3222BE3BCB700C1797C;
+			packageReferences = (
+				DD060C9E2BE3BEFC00D3FCFC /* XCRemoteSwiftPackageReference "Alamofire" */,
+				DD060CA32BE3BF3900D3FCFC /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = DD16A32C2BE3BCB700C1797C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,6 +189,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD060CA92BE3BF5600D3FCFC /* CriptoCell.xib in Resources */,
 				DD16A3382BE3BCB800C1797C /* Assets.xcassets in Resources */,
 				DD16A33B2BE3BCB800C1797C /* Base in Resources */,
 				DD16A3362BE3BCB700C1797C /* Base in Resources */,
@@ -138,6 +203,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD060CAB2BE3C1FB00D3FCFC /* CriptoCurrency.swift in Sources */,
+				DD060CA82BE3BF5600D3FCFC /* CriptoCell.swift in Sources */,
 				DD16A3332BE3BCB700C1797C /* ViewController.swift in Sources */,
 				DD16A32F2BE3BCB700C1797C /* AppDelegate.swift in Sources */,
 				DD16A3312BE3BCB700C1797C /* SceneDelegate.swift in Sources */,
@@ -218,7 +285,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -275,7 +342,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -299,6 +366,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -326,6 +394,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -361,6 +430,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DD060C9E2BE3BEFC00D3FCFC /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+		DD060CA32BE3BF3900D3FCFC /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.11.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DD060C9F2BE3BEFC00D3FCFC /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD060C9E2BE3BEFC00D3FCFC /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		DD060CA12BE3BEFC00D3FCFC /* AlamofireDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD060C9E2BE3BEFC00D3FCFC /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = AlamofireDynamic;
+		};
+		DD060CA42BE3BF3900D3FCFC /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD060CA32BE3BF3900D3FCFC /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DD16A3232BE3BCB700C1797C /* Project object */;
 }

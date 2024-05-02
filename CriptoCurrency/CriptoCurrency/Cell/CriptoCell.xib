@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="99" id="KGk-i7-Jjw" customClass="CriptoCell" customModule="CriptoCurrency" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="401" height="99"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="401" height="99"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o1w-PU-WhI">
+                        <rect key="frame" x="8" y="8" width="385" height="83"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dTw-O3-dmx">
+                                <rect key="frame" x="8" y="8" width="369" height="67"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dollarsign" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="3z1-iB-ShR">
+                                        <rect key="frame" x="0.0" y="-0.3333333333333357" width="40" height="67.666666666666686"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="Jrq-8S-KgG"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Vof-KQ-1o6">
+                                        <rect key="frame" x="48" y="0.0" width="321" height="67"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="s2d-e6-KFZ">
+                                                <rect key="frame" x="0.0" y="0.0" width="321" height="33.666666666666664"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ETH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMc-sN-CZv">
+                                                        <rect key="frame" x="0.0" y="0.0" width="32.333333333333336" height="33.666666666666664"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" systemColor="systemGrayColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2,123" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oCi-aX-6Xz">
+                                                        <rect key="frame" x="279.66666666666669" y="0.0" width="41.333333333333314" height="33.666666666666664"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="YJA-Kw-rlK">
+                                                <rect key="frame" x="0.0" y="33.666666666666657" width="321" height="33.333333333333343"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Etherium" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TTE-Iv-X7T">
+                                                        <rect key="frame" x="0.0" y="0.0" width="70.333333333333329" height="33.333333333333336"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="002," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oGx-NG-L3N">
+                                                        <rect key="frame" x="286" y="0.0" width="35" height="33.333333333333336"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dTw-O3-dmx" firstAttribute="leading" secondItem="o1w-PU-WhI" secondAttribute="leading" constant="8" id="7Ka-57-jvV"/>
+                            <constraint firstAttribute="trailing" secondItem="dTw-O3-dmx" secondAttribute="trailing" constant="8" id="L9c-Fs-34c"/>
+                            <constraint firstAttribute="bottom" secondItem="dTw-O3-dmx" secondAttribute="bottom" constant="8" id="a3n-MA-hQu"/>
+                            <constraint firstItem="dTw-O3-dmx" firstAttribute="top" secondItem="o1w-PU-WhI" secondAttribute="top" constant="8" id="dNW-Y8-4G8"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="o1w-PU-WhI" secondAttribute="bottom" constant="8" id="TN0-xB-PHW"/>
+                    <constraint firstItem="o1w-PU-WhI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="WS2-ny-BfV"/>
+                    <constraint firstItem="o1w-PU-WhI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="bFl-JF-IGk"/>
+                    <constraint firstAttribute="trailing" secondItem="o1w-PU-WhI" secondAttribute="trailing" constant="8" id="u1C-A5-m4c"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="changeOfCurrency" destination="oGx-NG-L3N" id="Sct-CY-hZE"/>
+                <outlet property="currencyFullName" destination="TTE-Iv-X7T" id="o2w-FI-rFp"/>
+                <outlet property="currencyImage" destination="3z1-iB-ShR" id="fV8-Lk-5zb"/>
+                <outlet property="currencyShortName" destination="rMc-sN-CZv" id="SDH-VH-LyN"/>
+                <outlet property="currencyValue" destination="oCi-aX-6Xz" id="qr3-5g-ltT"/>
+                <outlet property="currencyView" destination="o1w-PU-WhI" id="7dh-ED-yes"/>
+            </connections>
+            <point key="canvasLocation" x="191.6030534351145" y="8.0985915492957758"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="dollarsign" catalog="system" width="89" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
