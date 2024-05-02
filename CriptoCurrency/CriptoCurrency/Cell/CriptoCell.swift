@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CriptoCell: UITableViewCell {
 
@@ -26,26 +27,32 @@ class CriptoCell: UITableViewCell {
         currencyView.layer.cornerRadius = 10
         currencyView.layer.borderWidth = 1
         currencyView.layer.borderColor = UIColor.lightGray.cgColor
-        // shadow
         currencyView.layer.shadowColor = UIColor.black.cgColor
         currencyView.layer.shadowOffset = CGSize(width: 0, height: 1)
         currencyView.layer.shadowOpacity = 0.2
         currencyView.layer.shadowRadius = 1
     }
 
-    func configureCell(cripto: CriptoCurrency) {
+    func configureCell(with coins: Coin) {
+        currencyShortName.text = coins.symbol
+        currencyFullName.text = coins.name
+        if let price = coins.price {
+            let priceDouble = Double(price)
+            currencyValue.text = String(format: "$%.5f", priceDouble!)
+        }
+        changeOfCurrency.text = "\(coins.change ?? "")"
 
-        /*currencyImage.image = UIImage(named: cripto.image)
-        currencyShortName.text = cripto.shortName
-        currencyFullName.text = cripto.fullName
-        currencyValue.text = String(cripto.value)
-        changeOfCurrency.text = cripto.change
-
-        if cripto.change.contains("-") {
-            changeOfCurrency.textColor = .red
-        } else {
-            changeOfCurrency.textColor = .green
-        }*/
+        // get .svg image from url
+        if let imageUrl = coins.iconURL {
+            currencyImage.kf.setImage(with: URL(string: imageUrl)) { result in
+                switch result {
+                case .success(_):
+                    print("Image loaded successfully")
+                case .failure(let error):
+                    print("Error loading image: \(error)")
+                }
+            }
+        }
     }
 
 }

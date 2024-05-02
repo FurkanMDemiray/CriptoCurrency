@@ -12,6 +12,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
     var criptoViewModel = CriptoViewModel()
+    var criptoList = [Coin]() {
+        didSet {
+            //criptoList = criptoList.sorted { $0.rank!  < $1.rank!  }
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+            for cripto in criptoList {
+                print(cripto.iconURL)
+            }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,25 +42,22 @@ class ViewController: UIViewController {
         criptoViewModel.getCriptoCurrency { result in
             switch result {
             case .success(let criptoCurrency):
-                print(criptoCurrency)
+                self.criptoList = criptoCurrency.data.coins
             case .failure(let error):
                 print(error)
             }
         }
     }
-
-
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return criptoList.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CriptoCell", for: indexPath) as! CriptoCell
+        cell.configureCell(with: criptoList[indexPath.row])
         return cell
     }
-
-
 }
