@@ -42,17 +42,13 @@ class CriptoCell: UITableViewCell {
         }
         changeOfCurrency.text = "\(coins.change ?? "")"
 
-        // get .svg image from url
-        if let imageUrl = coins.iconURL {
-            currencyImage.kf.setImage(with: URL(string: imageUrl)) { result in
-                switch result {
-                case .success(_):
-                    print("Image loaded successfully")
-                case .failure(let error):
-                    print("Error loading image: \(error)")
-                }
+        if var iconURLString = coins.iconURL, var iconURL = URL(string: iconURLString) {
+            if iconURLString.contains("svg") {
+                iconURLString = iconURLString.replacingOccurrences(of: "svg", with: "png")
+                iconURL = URL(string: iconURLString)!
+                currencyImage.kf.indicatorType = .activity
+                currencyImage.kf.setImage(with: iconURL)
             }
         }
     }
-
 }

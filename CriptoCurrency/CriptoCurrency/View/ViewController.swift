@@ -14,12 +14,8 @@ class ViewController: UIViewController {
     var criptoViewModel = CriptoViewModel()
     var criptoList = [Coin]() {
         didSet {
-            //criptoList = criptoList.sorted { $0.rank!  < $1.rank!  }
             DispatchQueue.main.async {
                 self.tableView.reloadData()
-            }
-            for cripto in criptoList {
-                print(cripto.iconURL)
             }
         }
     }
@@ -27,6 +23,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        showLoadingView()
         getCriptoCurrency()
     }
 
@@ -43,10 +43,22 @@ class ViewController: UIViewController {
             switch result {
             case .success(let criptoCurrency):
                 self.criptoList = criptoCurrency.data.coins
+                self.hideLoadingView()
             case .failure(let error):
                 print(error)
             }
         }
+    }
+
+    private func showLoadingView() {
+        let activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.color = .systemBlue
+        activityIndicator.startAnimating()
+        tableView.backgroundView = activityIndicator
+    }
+
+    private func hideLoadingView() {
+        tableView.backgroundView = nil
     }
 }
 
