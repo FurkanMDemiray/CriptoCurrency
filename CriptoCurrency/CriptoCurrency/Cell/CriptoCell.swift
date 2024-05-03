@@ -60,6 +60,10 @@ class CriptoCell: UITableViewCell {
                 currencyImage.kf.indicatorType = .activity
                 currencyImage.kf.setImage(with: iconURL)
             }
+            else {
+                currencyImage.kf.indicatorType = .activity
+                currencyImage.kf.setImage(with: iconURL)
+            }
         }
     }
 }
