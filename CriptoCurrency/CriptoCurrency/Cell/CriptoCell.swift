@@ -33,25 +33,38 @@ class CriptoCell: UITableViewCell {
         currencyView.layer.shadowRadius = 1
     }
 
+    private func calculateChangeOfCurrencyInDollar(change: String, price: Double) -> (String, UIColor) {
+        if change.contains("-") {
+            let changeOfCurrencyInDollar = (price * 100) / (100 - Double(change)!)
+            let changeAmount = price - changeOfCurrencyInDollar
+            let changeOfCurrencyInDollarString = String(format: "%.3f", abs(changeAmount))
+            return ("(\(change)%) (-$\(changeOfCurrencyInDollarString))", .systemRed)
+        }
+        else {
+            let changeOfCurrencyInDollar = (price * 100) / (100 + Double(change)!)
+            let changeAmount = changeOfCurrencyInDollar - price
+            let changeOfCurrencyInDollarString = String(format: "%.3f", abs(changeAmount))
+            return ("+(\(change)%) (+$\(changeOfCurrencyInDollarString)", .systemGreen)
+        }
+    }
+
     func configureCell(with coins: Coin) {
-        if let color = coins.color {
-            currencyFullName.textColor = colorFromHex(hex: color)
-        }
-        if let change = coins.change {
-            if change.contains("-") {
-                changeOfCurrency.textColor = .systemRed
-            } else {
-                changeOfCurrency.textColor = .systemGreen
-            }
-        }
         if let price = coins.price {
             let priceDouble = Double(price)
             currencyValue.text = String(format: "$%.5f", priceDouble!)
+            if let change = coins.change {
+                let (changeOfCurrencyInDollar, color) = calculateChangeOfCurrencyInDollar(change: change, price: priceDouble ?? 0.0)
+                changeOfCurrency.text = String(format: "%@", changeOfCurrencyInDollar)
+                changeOfCurrency.textColor = color
+            }
+        }
+        if let color = coins.color {
+            currencyFullName.textColor = colorFromHex(hex: color)
         }
 
         currencyShortName.text = coins.symbol
         currencyFullName.text = coins.name
-        changeOfCurrency.text = "\(coins.change ?? "")"
+
 
         if var iconURLString = coins.iconURL, var iconURL = URL(string: iconURLString) {
             if iconURLString.contains("svg") {
