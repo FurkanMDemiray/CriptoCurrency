@@ -34,11 +34,75 @@
                     <navigationItem key="navigationItem" id="i0C-lo-cZI"/>
                     <connections>
                         <outlet property="tableView" destination="SLF-Sv-i6v" id="b8S-cc-0fO"/>
+                        <segue destination="Guv-TH-90Q" kind="presentation" identifier="toDetailVC" modalPresentationStyle="fullScreen" id="lEi-Ch-EVs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1057.2519083969464" y="-27.464788732394368"/>
+        </scene>
+        <!--DetailVC-->
+        <scene sceneID="jbl-nL-OLp">
+            <objects>
+                <viewController id="Guv-TH-90Q" customClass="DetailVC" customModule="CriptoCurrency" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="olD-13-l4Z">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sdH-Vm-plV">
+                                <rect key="frame" x="176" y="8" width="41.333333333333343" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="ujp-gK-Lcs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.51372549019607838" green="0.55686274509803924" blue="0.67843137254901964" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bell" translatesAutoresizingMaskIntoConstraints="NO" id="4yB-Ve-4Ql">
+                                <rect key="frame" x="360" y="8" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="7Ud-h0-0Sf"/>
+                                    <constraint firstAttribute="width" constant="25" id="dMF-Gt-GZe"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bitcoin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhT-8b-hQX">
+                                <rect key="frame" x="8" y="37" width="377" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <color key="textColor" red="0.054901960784313725" green="0.098039215686274508" blue="0.34901960784313724" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FB5-Zp-A62">
+                                <rect key="frame" x="8" y="8" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="19a-ne-IWE"/>
+                                    <constraint firstAttribute="width" constant="25" id="KYC-y5-eyF"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="left"/>
+                                <connections>
+                                    <action selector="backButtonClicked:" destination="Guv-TH-90Q" eventType="touchUpInside" id="1sA-vh-nSf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6HE-Eu-U57"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="FB5-Zp-A62" firstAttribute="leading" secondItem="6HE-Eu-U57" secondAttribute="leading" constant="8" id="0Tj-K6-DLF"/>
+                            <constraint firstItem="sdH-Vm-plV" firstAttribute="top" secondItem="6HE-Eu-U57" secondAttribute="top" constant="8" id="9Ok-nI-mzy"/>
+                            <constraint firstItem="6HE-Eu-U57" firstAttribute="trailing" secondItem="bhT-8b-hQX" secondAttribute="trailing" constant="8" id="DZg-0g-QgO"/>
+                            <constraint firstItem="FB5-Zp-A62" firstAttribute="top" secondItem="6HE-Eu-U57" secondAttribute="top" constant="8" id="KWw-Xn-KRm"/>
+                            <constraint firstItem="bhT-8b-hQX" firstAttribute="leading" secondItem="6HE-Eu-U57" secondAttribute="leading" constant="8" id="UG8-jQ-9MA"/>
+                            <constraint firstItem="4yB-Ve-4Ql" firstAttribute="top" secondItem="6HE-Eu-U57" secondAttribute="top" constant="8" id="fEd-sB-Jpr"/>
+                            <constraint firstItem="6HE-Eu-U57" firstAttribute="trailing" secondItem="4yB-Ve-4Ql" secondAttribute="trailing" constant="8" id="sRW-oC-M1R"/>
+                            <constraint firstItem="sdH-Vm-plV" firstAttribute="centerX" secondItem="olD-13-l4Z" secondAttribute="centerX" id="wPK-wQ-iLO"/>
+                            <constraint firstItem="bhT-8b-hQX" firstAttribute="top" secondItem="4yB-Ve-4Ql" secondAttribute="bottom" constant="4" id="xM6-aM-LuB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="RNQ-xx-wHC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WLj-xs-xqh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1888" y="-27"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DSc-Ce-ghV">
@@ -60,6 +124,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bell" width="32" height="32"/>
+        <image name="left" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

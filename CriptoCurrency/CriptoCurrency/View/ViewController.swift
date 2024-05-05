@@ -16,11 +16,51 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
+        addFilterButton()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         showLoadingView()
         getCriptoCurrency()
+    }
+
+    private func addFilterButton() {
+       // price, marketCap, 24h Volume, change, listedAt filter dropdown button
+        let filterButton = UIBarButtonItem(image: UIImage(systemName: "line.horizontal.3.decrease.circle"), style: .plain, target: self, action: #selector(filterButtonTapped))
+        navigationItem.rightBarButtonItem = filterButton
+
+    }
+
+    @objc private func filterButtonTapped() {
+        let alert = UIAlertController(title: "Filter", message: "Filter by", preferredStyle: .alert)
+        let priceAction = UIAlertAction(title: "Price", style: .default) { _ in
+            //self.criptoViewModel.filterByPrice()
+            self.tableView.reloadData()
+        }
+        let marketCapAction = UIAlertAction(title: "Market Cap", style: .default) { _ in
+            //self.criptoViewModel.filterByMarketCap()
+            self.tableView.reloadData()
+        }
+        let volumeAction = UIAlertAction(title: "24h Volume", style: .default) { _ in
+            //self.criptoViewModel.filterByVolume()
+            self.tableView.reloadData()
+        }
+        let changeAction = UIAlertAction(title: "Change", style: .default) { _ in
+            //self.criptoViewModel.filterByChange()
+            self.tableView.reloadData()
+        }
+        let listedAtAction = UIAlertAction(title: "Listed At", style: .default) { _ in
+            //self.criptoViewModel.filterByListedAt()
+            self.tableView.reloadData()
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        alert.addAction(priceAction)
+        alert.addAction(marketCapAction)
+        alert.addAction(volumeAction)
+        alert.addAction(changeAction)
+        alert.addAction(listedAtAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true)
     }
 
     private func configureTableView() {
@@ -68,5 +108,9 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CriptoCell", for: indexPath) as! CriptoCell
         cell.configureCell(with: criptoViewModel.criptoList[indexPath.row])
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "toDetailVC", sender: criptoViewModel.criptoList[indexPath.row])
     }
 }

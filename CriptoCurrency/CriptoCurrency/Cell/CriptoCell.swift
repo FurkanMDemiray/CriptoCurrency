@@ -44,11 +44,13 @@ class CriptoCell: UITableViewCell {
             let changeOfCurrencyInDollar = (price * 100) / (100 + Double(change)!)
             let changeAmount = changeOfCurrencyInDollar - price
             let changeOfCurrencyInDollarString = String(format: "%.3f", abs(changeAmount))
-            return ("+(\(change)%) (+$\(changeOfCurrencyInDollarString)", .systemGreen)
+            return ("+(\(change)%) (+$\(changeOfCurrencyInDollarString)", self.colorFromHex(hex: "#3ED2A3"))
         }
     }
 
     func configureCell(with coins: Coin) {
+        currencyShortName.text = coins.symbol
+        currencyFullName.text = coins.name
         if let price = coins.price {
             let priceDouble = Double(price)
             currencyValue.text = String(format: "$%.5f", priceDouble!)
@@ -61,20 +63,14 @@ class CriptoCell: UITableViewCell {
         if let color = coins.color {
             currencyFullName.textColor = colorFromHex(hex: color)
         }
-
-        currencyShortName.text = coins.symbol
-        currencyFullName.text = coins.name
-
-
         if var iconURLString = coins.iconURL, var iconURL = URL(string: iconURLString) {
-            if iconURLString.contains("svg") {
-                iconURLString = iconURLString.replacingOccurrences(of: "svg", with: "png")
+            currencyImage.kf.indicatorType = .activity
+            if iconURLString.contains(".svg") {
+                iconURLString = iconURLString.replacingOccurrences(of: ".svg", with: ".png")
                 iconURL = URL(string: iconURLString)!
-                currencyImage.kf.indicatorType = .activity
                 currencyImage.kf.setImage(with: iconURL)
             }
             else {
-                currencyImage.kf.indicatorType = .activity
                 currencyImage.kf.setImage(with: iconURL)
             }
         }

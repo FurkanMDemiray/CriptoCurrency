@@ -19,11 +19,12 @@
 		DD16A3312BE3BCB700C1797C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD16A3302BE3BCB700C1797C /* SceneDelegate.swift */; };
 		DD16A3332BE3BCB700C1797C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD16A3322BE3BCB700C1797C /* ViewController.swift */; };
 		DD16A3362BE3BCB700C1797C /* Base in Resources */ = {isa = PBXBuildFile; fileRef = DD16A3352BE3BCB700C1797C /* Base */; };
-		DD16A3382BE3BCB800C1797C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD16A3372BE3BCB800C1797C /* Assets.xcassets */; };
 		DD16A33B2BE3BCB800C1797C /* Base in Resources */ = {isa = PBXBuildFile; fileRef = DD16A33A2BE3BCB800C1797C /* Base */; };
+		DD6DEC042BE7C42A0081F383 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD6DEC032BE7C4290081F383 /* Assets.xcassets */; };
 		DDBDA88C2BE4198500C3570A /* SVGKit in Frameworks */ = {isa = PBXBuildFile; productRef = DDBDA88B2BE4198500C3570A /* SVGKit */; };
 		DDBDA88E2BE4198500C3570A /* SVGKitSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DDBDA88D2BE4198500C3570A /* SVGKitSwift */; };
 		DDBDA8942BE4320C00C3570A /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBDA8932BE4320C00C3570A /* ColorExtension.swift */; };
+		DDBDA8962BE679DB00C3570A /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBDA8952BE679DB00C3570A /* DetailVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,10 +38,11 @@
 		DD16A3302BE3BCB700C1797C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DD16A3322BE3BCB700C1797C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DD16A3352BE3BCB700C1797C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		DD16A3372BE3BCB800C1797C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD16A33A2BE3BCB800C1797C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD16A33C2BE3BCB800C1797C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD6DEC032BE7C4290081F383 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDBDA8932BE4320C00C3570A /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		DDBDA8952BE679DB00C3570A /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				DD16A32E2BE3BCB700C1797C /* AppDelegate.swift */,
 				DD16A3302BE3BCB700C1797C /* SceneDelegate.swift */,
 				DD16A3322BE3BCB700C1797C /* ViewController.swift */,
+				DDBDA8952BE679DB00C3570A /* DetailVC.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -128,8 +131,8 @@
 				DD060C9B2BE3BE5100D3FCFC /* ViewModel */,
 				DD060C9A2BE3BE4900D3FCFC /* View */,
 				DD16A3342BE3BCB700C1797C /* Main.storyboard */,
-				DD16A3372BE3BCB800C1797C /* Assets.xcassets */,
 				DD16A3392BE3BCB800C1797C /* LaunchScreen.storyboard */,
+				DD6DEC032BE7C4290081F383 /* Assets.xcassets */,
 				DD16A33C2BE3BCB800C1797C /* Info.plist */,
 			);
 			path = CriptoCurrency;
@@ -214,8 +217,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD060CA92BE3BF5600D3FCFC /* CriptoCell.xib in Resources */,
-				DD16A3382BE3BCB800C1797C /* Assets.xcassets in Resources */,
 				DD16A33B2BE3BCB800C1797C /* Base in Resources */,
+				DD6DEC042BE7C42A0081F383 /* Assets.xcassets in Resources */,
 				DD16A3362BE3BCB700C1797C /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -232,6 +235,7 @@
 				DD060CA82BE3BF5600D3FCFC /* CriptoCell.swift in Sources */,
 				DDBDA8942BE4320C00C3570A /* ColorExtension.swift in Sources */,
 				DD060CAF2BE3C75E00D3FCFC /* CriptoViewModel.swift in Sources */,
+				DDBDA8962BE679DB00C3570A /* DetailVC.swift in Sources */,
 				DD16A3332BE3BCB700C1797C /* ViewController.swift in Sources */,
 				DD16A32F2BE3BCB700C1797C /* AppDelegate.swift in Sources */,
 				DD16A3312BE3BCB700C1797C /* SceneDelegate.swift in Sources */,

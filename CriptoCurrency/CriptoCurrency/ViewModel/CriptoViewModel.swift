@@ -12,6 +12,7 @@ final class CriptoViewModel {
     var criptoCurrency: CriptoCurrency?
     var criptoList = [Coin]()
 
+
     func getCriptoCurrency(completion: @escaping (Result<CriptoCurrency, Error>) -> Void) {
         CriptoService.shared.getCriptoCurrency { result in
             switch result {
