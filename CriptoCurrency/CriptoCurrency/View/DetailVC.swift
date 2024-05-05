@@ -41,14 +41,40 @@ class DetailVC: UIViewController {
         currencyVİew.layer.shadowRadius = 1
     }
 
+    private func configureHighAndLowText() {
+        let highValue = selectedCoin?.sparkline?.max()
+        let lowValue = selectedCoin?.sparkline?.min()
+
+        let normalColor = colorFromHex(hex: "#0E1959")
+        let highValueColor = colorFromHex(hex: "#3ED2A3")
+        let lowValueColor = colorFromHex(hex: "#F96A6A")
+
+        let highText = "High: "
+        let lowText = "Low: "
+
+        let highAttributedString = NSMutableAttributedString(string: "\(highText)\(formatter.string(from: NSDecimalNumber(string: highValue)) ?? "")")
+        highAttributedString.addAttribute(.foregroundColor, value: normalColor, range: NSRange(location: 0, length: highText.count))
+        highAttributedString.addAttribute(.foregroundColor, value: highValueColor, range: NSRange(location: highText.count, length: highAttributedString.length - highText.count))
+
+        let lowAttributedString = NSMutableAttributedString(string: "\(lowText)\(formatter.string(from: NSDecimalNumber(string: lowValue)) ?? "")")
+        lowAttributedString.addAttribute(.foregroundColor, value: normalColor, range: NSRange(location: 0, length: lowText.count))
+        lowAttributedString.addAttribute(.foregroundColor, value: lowValueColor, range: NSRange(location: lowText.count, length: lowAttributedString.length - lowText.count))
+
+        highLabel.attributedText = highAttributedString
+        lowLabel.attributedText = lowAttributedString
+    }
+
     private func setLabels() {
-        shortNameLabel.text = selectedCoin?.symbol
-        nameLabel.text = selectedCoin?.name
+        configureHighAndLowText()
+        if let shotName = selectedCoin?.symbol {
+            shortNameLabel.text = shotName
+        }
+        if let name = selectedCoin?.name {
+            nameLabel.text = name
+        }
         if let price = selectedCoin?.price {
             priceLabel.text = formatter.string(from: NSDecimalNumber(string: price))
         }
-        //highLabel.text = coin?.high
-        //lowLabel.text = coin?.low
         if let price = selectedCoin?.price {
             let priceDouble = Double(price)
             priceLabel.text = formatter.string(from: NSDecimalNumber(value: priceDouble ?? 0.0))

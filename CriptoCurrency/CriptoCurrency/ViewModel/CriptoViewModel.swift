@@ -24,4 +24,26 @@ final class CriptoViewModel {
             }
         }
     }
+
+    func filterByPrice() {
+        criptoList = criptoList.sorted { $0.price ?? "" < $1.price ?? "" }
+        print(criptoList[2])
+    }
+
+    func filterByMarketCap() {
+        criptoList = criptoList.sorted { $0.marketCap ?? "" < $1.marketCap ?? "" }
+    }
+
+    func filterByVolume() {
+        criptoList = criptoList.sorted { $0.the24HVolume ?? "" < $1.the24HVolume ?? "" }
+    }
+
+    func filterByChange() {
+        criptoList = criptoList.sorted { $0.change ?? "" < $1.change ?? "" }
+    }
+
+    func filterByListedAt() {
+        criptoList = criptoList.sorted { $0.listedAt ?? 0 < $1.listedAt ?? 0 }
+        print(criptoList)
+    }
 }

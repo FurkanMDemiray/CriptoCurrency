@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    let button = UIButton(type: .custom)
 
     private var criptoViewModel = CriptoViewModel()
     lazy var selectedCoin: Coin? = nil
@@ -18,16 +19,15 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         configureTableView()
         addFilterButton()
+        addLabelToNavigationBar()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         showLoadingView()
         getCriptoCurrency()
-        addLabelToNavigationBar()
     }
 
     private func addLabelToNavigationBar() {
-        // add label to navigation bar top left
         let label = UILabel()
         label.text = "Ranking List"
         label.textColor = colorFromHex(hex: "0E1959")
@@ -36,9 +36,8 @@ class ViewController: UIViewController {
     }
 
     private func addFilterButton() {
-        // price, marketCap, 24h Volume, change, listedAt filter capsule button
-        let button = UIButton(type: .custom)
-        button.setTitle("Filter", for: .normal)
+
+        button.setTitle("Price", for: .normal)
         button.titleLabel?.font = UIFont(name: "Montserrat-Bold", size: 16)
         button.frame = CGRect(x: 0, y: 0, width: 100, height: 30)
         button.setTitleColor(colorFromHex(hex: "#6A61F2"), for: .normal)
@@ -48,30 +47,35 @@ class ViewController: UIViewController {
 
         let barButton = UIBarButtonItem(customView: button)
         navigationItem.rightBarButtonItem = barButton
-
     }
 
     @objc private func filterButtonTapped() {
         let alert = UIAlertController(title: "Filter", message: "Filter by", preferredStyle: .alert)
         let priceAction = UIAlertAction(title: "Price", style: .default) { _ in
-            //self.criptoViewModel.filterByPrice()
+            self.criptoViewModel.filterByPrice()
             self.tableView.reloadData()
+            self.button.setTitle("Price", for: .normal)
         }
         let marketCapAction = UIAlertAction(title: "Market Cap", style: .default) { _ in
-            //self.criptoViewModel.filterByMarketCap()
+            self.criptoViewModel.filterByMarketCap()
             self.tableView.reloadData()
+            self.button.setTitle("Market Cap", for: .normal)
+
         }
         let volumeAction = UIAlertAction(title: "24h Volume", style: .default) { _ in
-            //self.criptoViewModel.filterByVolume()
+            self.criptoViewModel.filterByVolume()
             self.tableView.reloadData()
+            self.button.setTitle("24h Volume", for: .normal)
         }
         let changeAction = UIAlertAction(title: "Change", style: .default) { _ in
-            //self.criptoViewModel.filterByChange()
+            self.criptoViewModel.filterByChange()
             self.tableView.reloadData()
+            self.button.setTitle("Change", for: .normal)
         }
         let listedAtAction = UIAlertAction(title: "Listed At", style: .default) { _ in
-            //self.criptoViewModel.filterByListedAt()
+            self.criptoViewModel.filterByListedAt()
             self.tableView.reloadData()
+            self.button.setTitle("Listed At", for: .normal)
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
         alert.addAction(priceAction)

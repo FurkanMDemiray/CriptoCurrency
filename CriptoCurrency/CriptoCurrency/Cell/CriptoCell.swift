@@ -33,8 +33,13 @@ class CriptoCell: UITableViewCell {
     }
 
     func configureCell(with coins: Coin) {
-        currencyShortName.text = coins.symbol
-        currencyFullName.text = coins.name
+        currencyFullName.textColor = colorFromHex(hex: coins.color ?? "0E1959")
+        if let shortName = coins.symbol {
+            currencyShortName.text = shortName
+        }
+        if let fullName = coins.name {
+            currencyFullName.text = fullName
+        }
         if let price = coins.price {
             let priceDouble = Double(price)
             currencyValue.text = formatter.string(from: NSDecimalNumber(value: priceDouble ?? 0.0))
@@ -44,8 +49,6 @@ class CriptoCell: UITableViewCell {
                 changeOfCurrency.textColor = colorFromHex(hex: color)
             }
         }
-        currencyFullName.textColor = colorFromHex(hex: coins.color ?? "0E1959")
-
         if var iconURLString = coins.iconURL, var iconURL = URL(string: iconURLString) {
             currencyImage.kf.indicatorType = .activity
             if iconURLString.contains(".svg") {
