@@ -17,7 +17,7 @@
 		DD060CAF2BE3C75E00D3FCFC /* CriptoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD060CAE2BE3C75E00D3FCFC /* CriptoViewModel.swift */; };
 		DD16A32F2BE3BCB700C1797C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD16A32E2BE3BCB700C1797C /* AppDelegate.swift */; };
 		DD16A3312BE3BCB700C1797C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD16A3302BE3BCB700C1797C /* SceneDelegate.swift */; };
-		DD16A3332BE3BCB700C1797C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD16A3322BE3BCB700C1797C /* ViewController.swift */; };
+		DD16A3332BE3BCB700C1797C /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD16A3322BE3BCB700C1797C /* MainVC.swift */; };
 		DD16A3362BE3BCB700C1797C /* Base in Resources */ = {isa = PBXBuildFile; fileRef = DD16A3352BE3BCB700C1797C /* Base */; };
 		DD16A33B2BE3BCB800C1797C /* Base in Resources */ = {isa = PBXBuildFile; fileRef = DD16A33A2BE3BCB800C1797C /* Base */; };
 		DD6DEC042BE7C42A0081F383 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD6DEC032BE7C4290081F383 /* Assets.xcassets */; };
@@ -45,7 +45,7 @@
 		DD16A32B2BE3BCB700C1797C /* CriptoCurrency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CriptoCurrency.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD16A32E2BE3BCB700C1797C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD16A3302BE3BCB700C1797C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DD16A3322BE3BCB700C1797C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DD16A3322BE3BCB700C1797C /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		DD16A3352BE3BCB700C1797C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DD16A33A2BE3BCB800C1797C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD16A33C2BE3BCB800C1797C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -92,7 +92,7 @@
 			children = (
 				DD16A32E2BE3BCB700C1797C /* AppDelegate.swift */,
 				DD16A3302BE3BCB700C1797C /* SceneDelegate.swift */,
-				DD16A3322BE3BCB700C1797C /* ViewController.swift */,
+				DD16A3322BE3BCB700C1797C /* MainVC.swift */,
 				DDBDA8952BE679DB00C3570A /* DetailVC.swift */,
 			);
 			path = View;
@@ -142,6 +142,7 @@
 		DD16A32D2BE3BCB700C1797C /* CriptoCurrency */ = {
 			isa = PBXGroup;
 			children = (
+				DD6DEC172BE7FD140081F383 /* Fonts */,
 				DD6DEC092BE7D7F90081F383 /* Protocol */,
 				DDBDA8922BE4320100C3570A /* Extension */,
 				DD060C9D2BE3BE7E00D3FCFC /* Cell */,
@@ -152,7 +153,6 @@
 				DD16A3342BE3BCB700C1797C /* Main.storyboard */,
 				DD16A3392BE3BCB800C1797C /* LaunchScreen.storyboard */,
 				DD6DEC032BE7C4290081F383 /* Assets.xcassets */,
-				DD6DEC172BE7FD140081F383 /* Fonts */,
 				DD16A33C2BE3BCB800C1797C /* Info.plist */,
 			);
 			path = CriptoCurrency;
@@ -285,7 +285,7 @@
 				DD6DEC112BE7D8B40081F383 /* CurrencyChangeCalculatorExtension.swift in Sources */,
 				DD6DEC0D2BE7D8350081F383 /* StringToHexCode.swift in Sources */,
 				DDBDA8962BE679DB00C3570A /* DetailVC.swift in Sources */,
-				DD16A3332BE3BCB700C1797C /* ViewController.swift in Sources */,
+				DD16A3332BE3BCB700C1797C /* MainVC.swift in Sources */,
 				DD16A32F2BE3BCB700C1797C /* AppDelegate.swift in Sources */,
 				DD16A3312BE3BCB700C1797C /* SceneDelegate.swift in Sources */,
 				DD6DEC062BE7CCAB0081F383 /* CurrencyFormatter.swift in Sources */,

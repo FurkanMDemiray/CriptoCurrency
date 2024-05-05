@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     let button = UIButton(type: .custom)
@@ -36,11 +36,10 @@ class ViewController: UIViewController {
     }
 
     private func addFilterButton() {
-
         button.setTitle("Price", for: .normal)
         button.setImage(UIImage(named: "downArrow"), for: .normal)
-        button.titleLabel?.font = UIFont(name: "Montserrat-Bold", size: 14)
-        button.frame = CGRect(x: 0, y: 0, width: 100, height: 30)
+        button.titleLabel?.font = UIFont(name: "Montserrat-Regular", size: 14)
+        button.frame = CGRect(x: 0, y: 0, width: 120, height: 30)
         button.setTitleColor(colorFromHex(hex: "#6A61F2"), for: .normal)
         button.backgroundColor = colorFromHex(hex: "#E8E7FF")
         button.layer.cornerRadius = 16
@@ -50,33 +49,37 @@ class ViewController: UIViewController {
         navigationItem.rightBarButtonItem = barButton
     }
 
+    private func setTitleLabel(_ title: String) {
+        self.button.setTitle(title, for: .normal)
+        self.button.titleLabel?.font = UIFont(name: "Montserrat-Regular", size: 14)
+    }
+
     @objc private func filterButtonTapped() {
         let alert = UIAlertController(title: "Filter", message: "Filter by", preferredStyle: .alert)
         let priceAction = UIAlertAction(title: "Price", style: .default) { _ in
             self.criptoViewModel.filterByPrice()
+            self.setTitleLabel("Price")
             self.tableView.reloadData()
-            self.button.setTitle("Price", for: .normal)
         }
         let marketCapAction = UIAlertAction(title: "Market Cap", style: .default) { _ in
             self.criptoViewModel.filterByMarketCap()
+            self.setTitleLabel("Market Cap")
             self.tableView.reloadData()
-            self.button.setTitle("Market Cap", for: .normal)
-
         }
         let volumeAction = UIAlertAction(title: "24h Volume", style: .default) { _ in
             self.criptoViewModel.filterByVolume()
+            self.setTitleLabel("24h Volume")
             self.tableView.reloadData()
-            self.button.setTitle("24h Volume", for: .normal)
         }
         let changeAction = UIAlertAction(title: "Change", style: .default) { _ in
             self.criptoViewModel.filterByChange()
+            self.setTitleLabel("Change")
             self.tableView.reloadData()
-            self.button.setTitle("Change", for: .normal)
         }
         let listedAtAction = UIAlertAction(title: "Listed At", style: .default) { _ in
             self.criptoViewModel.filterByListedAt()
+            self.setTitleLabel("Listed At")
             self.tableView.reloadData()
-            self.button.setTitle("Listed At", for: .normal)
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
         alert.addAction(priceAction)
@@ -131,7 +134,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UITableViewDataSource, UITableViewDelegate {
+extension MainVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return criptoViewModel.criptoList.count
     }
@@ -148,4 +151,4 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
-extension ViewController: StringToHexCode { }
+extension MainVC: StringToHexCode { }
