@@ -38,7 +38,8 @@ class ViewController: UIViewController {
     private func addFilterButton() {
 
         button.setTitle("Price", for: .normal)
-        button.titleLabel?.font = UIFont(name: "Montserrat-Bold", size: 16)
+        button.setImage(UIImage(named: "downArrow"), for: .normal)
+        button.titleLabel?.font = UIFont(name: "Montserrat-Bold", size: 14)
         button.frame = CGRect(x: 0, y: 0, width: 100, height: 30)
         button.setTitleColor(colorFromHex(hex: "#6A61F2"), for: .normal)
         button.backgroundColor = colorFromHex(hex: "#E8E7FF")

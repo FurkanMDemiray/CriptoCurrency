@@ -27,7 +27,6 @@ final class CriptoViewModel {
 
     func filterByPrice() {
         criptoList = criptoList.sorted { $0.price ?? "" < $1.price ?? "" }
-        print(criptoList[2])
     }
 
     func filterByMarketCap() {
