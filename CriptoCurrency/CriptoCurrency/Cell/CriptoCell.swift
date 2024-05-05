@@ -44,9 +44,8 @@ class CriptoCell: UITableViewCell {
                 changeOfCurrency.textColor = colorFromHex(hex: color)
             }
         }
-        if let color = coins.color {
-            currencyFullName.textColor = colorFromHex(hex: color)
-        }
+        currencyFullName.textColor = colorFromHex(hex: coins.color ?? "0E1959")
+
         if var iconURLString = coins.iconURL, var iconURL = URL(string: iconURLString) {
             currencyImage.kf.indicatorType = .activity
             if iconURLString.contains(".svg") {
