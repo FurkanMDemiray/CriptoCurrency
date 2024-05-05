@@ -13,7 +13,8 @@ final class CriptoViewModel {
     var criptoList = [Coin]()
 
     func getCriptoCurrency(completion: @escaping (Result<CriptoCurrency, Error>) -> Void) {
-        CriptoService.shared.getCriptoCurrency { result in
+        CriptoService.shared.getCriptoCurrency { [weak self] result in
+            guard let self = self else { return }
             switch result {
             case .success(let criptoCurrency):
                 self.criptoCurrency = criptoCurrency

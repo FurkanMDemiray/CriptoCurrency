@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
     private var criptoViewModel = CriptoViewModel()
-    var selectedCoin: Coin?
+    lazy var selectedCoin: Coin? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +44,6 @@ class ViewController: UIViewController {
         button.setTitleColor(colorFromHex(hex: "#6A61F2"), for: .normal)
         button.backgroundColor = colorFromHex(hex: "#E8E7FF")
         button.layer.cornerRadius = 16
-        button.layer.borderColor = colorFromHex(hex: "0E1959").cgColor
         button.addTarget(self, action: #selector(filterButtonTapped), for: .touchUpInside)
 
         let barButton = UIBarButtonItem(customView: button)

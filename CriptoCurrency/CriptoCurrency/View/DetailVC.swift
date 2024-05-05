@@ -18,7 +18,7 @@ class DetailVC: UIViewController {
     @IBOutlet weak var changeOfCurrencyLabel: UILabel!
     @IBOutlet weak var lowLabel: UILabel!
 
-    var selectedCoin: Coin?
+    lazy var selectedCoin: Coin? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +44,6 @@ class DetailVC: UIViewController {
     private func setLabels() {
         shortNameLabel.text = selectedCoin?.symbol
         nameLabel.text = selectedCoin?.name
-
         if let price = selectedCoin?.price {
             priceLabel.text = formatter.string(from: NSDecimalNumber(string: price))
         }
