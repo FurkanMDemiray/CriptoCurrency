@@ -21,9 +21,15 @@
 		DD16A3362BE3BCB700C1797C /* Base in Resources */ = {isa = PBXBuildFile; fileRef = DD16A3352BE3BCB700C1797C /* Base */; };
 		DD16A33B2BE3BCB800C1797C /* Base in Resources */ = {isa = PBXBuildFile; fileRef = DD16A33A2BE3BCB800C1797C /* Base */; };
 		DD6DEC042BE7C42A0081F383 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD6DEC032BE7C4290081F383 /* Assets.xcassets */; };
+		DD6DEC062BE7CCAB0081F383 /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6DEC052BE7CCAB0081F383 /* CurrencyFormatter.swift */; };
+		DD6DEC0B2BE7D8180081F383 /* CurrencyChangeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6DEC0A2BE7D8180081F383 /* CurrencyChangeCalculator.swift */; };
+		DD6DEC0D2BE7D8350081F383 /* StringToHexCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6DEC0C2BE7D8350081F383 /* StringToHexCode.swift */; };
+		DD6DEC0F2BE7D87B0081F383 /* StringToHexCodeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6DEC0E2BE7D87B0081F383 /* StringToHexCodeExtension.swift */; };
+		DD6DEC112BE7D8B40081F383 /* CurrencyChangeCalculatorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6DEC102BE7D8B40081F383 /* CurrencyChangeCalculatorExtension.swift */; };
+		DD6DEC132BE7DBD00081F383 /* DetailVCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6DEC122BE7DBD00081F383 /* DetailVCExtension.swift */; };
+		DD6DEC152BE7DC050081F383 /* CriptoCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6DEC142BE7DC050081F383 /* CriptoCellExtension.swift */; };
 		DDBDA88C2BE4198500C3570A /* SVGKit in Frameworks */ = {isa = PBXBuildFile; productRef = DDBDA88B2BE4198500C3570A /* SVGKit */; };
 		DDBDA88E2BE4198500C3570A /* SVGKitSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DDBDA88D2BE4198500C3570A /* SVGKitSwift */; };
-		DDBDA8942BE4320C00C3570A /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBDA8932BE4320C00C3570A /* ColorExtension.swift */; };
 		DDBDA8962BE679DB00C3570A /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBDA8952BE679DB00C3570A /* DetailVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,7 +47,13 @@
 		DD16A33A2BE3BCB800C1797C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD16A33C2BE3BCB800C1797C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD6DEC032BE7C4290081F383 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DDBDA8932BE4320C00C3570A /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		DD6DEC052BE7CCAB0081F383 /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
+		DD6DEC0A2BE7D8180081F383 /* CurrencyChangeCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyChangeCalculator.swift; sourceTree = "<group>"; };
+		DD6DEC0C2BE7D8350081F383 /* StringToHexCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringToHexCode.swift; sourceTree = "<group>"; };
+		DD6DEC0E2BE7D87B0081F383 /* StringToHexCodeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringToHexCodeExtension.swift; sourceTree = "<group>"; };
+		DD6DEC102BE7D8B40081F383 /* CurrencyChangeCalculatorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyChangeCalculatorExtension.swift; sourceTree = "<group>"; };
+		DD6DEC122BE7DBD00081F383 /* DetailVCExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVCExtension.swift; sourceTree = "<group>"; };
+		DD6DEC142BE7DC050081F383 /* CriptoCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriptoCellExtension.swift; sourceTree = "<group>"; };
 		DDBDA8952BE679DB00C3570A /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,6 +136,7 @@
 		DD16A32D2BE3BCB700C1797C /* CriptoCurrency */ = {
 			isa = PBXGroup;
 			children = (
+				DD6DEC092BE7D7F90081F383 /* Protocol */,
 				DDBDA8922BE4320100C3570A /* Extension */,
 				DD060C9D2BE3BE7E00D3FCFC /* Cell */,
 				DD060C9C2BE3BE5500D3FCFC /* Service */,
@@ -138,10 +151,23 @@
 			path = CriptoCurrency;
 			sourceTree = "<group>";
 		};
+		DD6DEC092BE7D7F90081F383 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				DD6DEC0A2BE7D8180081F383 /* CurrencyChangeCalculator.swift */,
+				DD6DEC0C2BE7D8350081F383 /* StringToHexCode.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		DDBDA8922BE4320100C3570A /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				DDBDA8932BE4320C00C3570A /* ColorExtension.swift */,
+				DD6DEC052BE7CCAB0081F383 /* CurrencyFormatter.swift */,
+				DD6DEC0E2BE7D87B0081F383 /* StringToHexCodeExtension.swift */,
+				DD6DEC102BE7D8B40081F383 /* CurrencyChangeCalculatorExtension.swift */,
+				DD6DEC122BE7DBD00081F383 /* DetailVCExtension.swift */,
+				DD6DEC142BE7DC050081F383 /* CriptoCellExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -231,14 +257,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD060CAD2BE3C40D00D3FCFC /* CriptoService.swift in Sources */,
+				DD6DEC0F2BE7D87B0081F383 /* StringToHexCodeExtension.swift in Sources */,
 				DD060CAB2BE3C1FB00D3FCFC /* CriptoCurrency.swift in Sources */,
 				DD060CA82BE3BF5600D3FCFC /* CriptoCell.swift in Sources */,
-				DDBDA8942BE4320C00C3570A /* ColorExtension.swift in Sources */,
+				DD6DEC0B2BE7D8180081F383 /* CurrencyChangeCalculator.swift in Sources */,
 				DD060CAF2BE3C75E00D3FCFC /* CriptoViewModel.swift in Sources */,
+				DD6DEC112BE7D8B40081F383 /* CurrencyChangeCalculatorExtension.swift in Sources */,
+				DD6DEC0D2BE7D8350081F383 /* StringToHexCode.swift in Sources */,
 				DDBDA8962BE679DB00C3570A /* DetailVC.swift in Sources */,
 				DD16A3332BE3BCB700C1797C /* ViewController.swift in Sources */,
 				DD16A32F2BE3BCB700C1797C /* AppDelegate.swift in Sources */,
 				DD16A3312BE3BCB700C1797C /* SceneDelegate.swift in Sources */,
+				DD6DEC062BE7CCAB0081F383 /* CurrencyFormatter.swift in Sources */,
+				DD6DEC132BE7DBD00081F383 /* DetailVCExtension.swift in Sources */,
+				DD6DEC152BE7DC050081F383 /* CriptoCellExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

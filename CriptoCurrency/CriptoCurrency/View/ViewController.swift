@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
     private var criptoViewModel = CriptoViewModel()
+    var selectedCoin : Coin?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,7 @@ class ViewController: UIViewController {
     }
 
     private func addFilterButton() {
-       // price, marketCap, 24h Volume, change, listedAt filter dropdown button
+        // price, marketCap, 24h Volume, change, listedAt filter dropdown button
         let filterButton = UIBarButtonItem(image: UIImage(systemName: "line.horizontal.3.decrease.circle"), style: .plain, target: self, action: #selector(filterButtonTapped))
         navigationItem.rightBarButtonItem = filterButton
 
@@ -97,6 +98,13 @@ class ViewController: UIViewController {
     private func hideLoadingView() {
         tableView.backgroundView = nil
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetailVC" {
+            let detailVC = segue.destination as! DetailVC
+            detailVC.selectedCoin = selectedCoin
+        }
+    }
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
@@ -111,6 +119,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedCoin = criptoViewModel.criptoList[indexPath.row]
         performSegue(withIdentifier: "toDetailVC", sender: criptoViewModel.criptoList[indexPath.row])
     }
 }

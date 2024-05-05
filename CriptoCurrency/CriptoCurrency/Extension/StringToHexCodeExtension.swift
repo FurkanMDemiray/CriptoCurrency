@@ -1,15 +1,14 @@
 //
-//  ColorExtension.swift
+//  StringToHexCodeExtension.swift
 //  CriptoCurrency
 //
-//  Created by Melik Demiray on 2.05.2024.
+//  Created by Melik Demiray on 5.05.2024.
 //
 
 import Foundation
 import UIKit
 
-extension UITableViewCell {
-    // hex code to UIColor
+extension StringToHexCode {
     func colorFromHex(hex: String) -> UIColor {
         var hexSanitized = hex.trimmingCharacters(in: .whitespacesAndNewlines)
         hexSanitized = hexSanitized.replacingOccurrences(of: "#", with: "")

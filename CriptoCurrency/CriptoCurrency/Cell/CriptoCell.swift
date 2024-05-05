@@ -17,7 +17,6 @@ class CriptoCell: UITableViewCell {
     @IBOutlet weak var currencyValue: UILabel!
     @IBOutlet weak var changeOfCurrency: UILabel!
 
-
     override func awakeFromNib() {
         super.awakeFromNib()
         configureCurrencyView()
@@ -33,31 +32,16 @@ class CriptoCell: UITableViewCell {
         currencyView.layer.shadowRadius = 1
     }
 
-    private func calculateChangeOfCurrencyInDollar(change: String, price: Double) -> (String, UIColor) {
-        if change.contains("-") {
-            let changeOfCurrencyInDollar = (price * 100) / (100 - Double(change)!)
-            let changeAmount = price - changeOfCurrencyInDollar
-            let changeOfCurrencyInDollarString = String(format: "%.3f", abs(changeAmount))
-            return ("(\(change)%) (-$\(changeOfCurrencyInDollarString))", .systemRed)
-        }
-        else {
-            let changeOfCurrencyInDollar = (price * 100) / (100 + Double(change)!)
-            let changeAmount = changeOfCurrencyInDollar - price
-            let changeOfCurrencyInDollarString = String(format: "%.3f", abs(changeAmount))
-            return ("+(\(change)%) (+$\(changeOfCurrencyInDollarString)", self.colorFromHex(hex: "#3ED2A3"))
-        }
-    }
-
     func configureCell(with coins: Coin) {
         currencyShortName.text = coins.symbol
         currencyFullName.text = coins.name
         if let price = coins.price {
             let priceDouble = Double(price)
-            currencyValue.text = String(format: "$%.5f", priceDouble!)
+            currencyValue.text = formatter.string(from: NSDecimalNumber(value: priceDouble ?? 0.0))
             if let change = coins.change {
                 let (changeOfCurrencyInDollar, color) = calculateChangeOfCurrencyInDollar(change: change, price: priceDouble ?? 0.0)
-                changeOfCurrency.text = String(format: "%@", changeOfCurrencyInDollar)
-                changeOfCurrency.textColor = color
+                changeOfCurrency.text = changeOfCurrencyInDollar
+                changeOfCurrency.textColor = colorFromHex(hex: color)
             }
         }
         if let color = coins.color {
