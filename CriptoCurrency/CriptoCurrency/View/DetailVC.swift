@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Charts
 
 class DetailVC: UIViewController {
 
@@ -64,3 +65,4 @@ class DetailVC: UIViewController {
         dismiss(animated: true)
     }
 }
+

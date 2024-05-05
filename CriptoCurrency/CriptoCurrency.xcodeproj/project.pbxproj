@@ -28,6 +28,9 @@
 		DD6DEC112BE7D8B40081F383 /* CurrencyChangeCalculatorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6DEC102BE7D8B40081F383 /* CurrencyChangeCalculatorExtension.swift */; };
 		DD6DEC132BE7DBD00081F383 /* DetailVCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6DEC122BE7DBD00081F383 /* DetailVCExtension.swift */; };
 		DD6DEC152BE7DC050081F383 /* CriptoCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6DEC142BE7DC050081F383 /* CriptoCellExtension.swift */; };
+		DD6DEC1B2BE7FD290081F383 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD6DEC182BE7FD290081F383 /* Montserrat-Bold.ttf */; };
+		DD6DEC1C2BE7FD290081F383 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD6DEC192BE7FD290081F383 /* Montserrat-Regular.ttf */; };
+		DD6DEC1D2BE7FD290081F383 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = DD6DEC1A2BE7FD290081F383 /* OFL.txt */; };
 		DDBDA88C2BE4198500C3570A /* SVGKit in Frameworks */ = {isa = PBXBuildFile; productRef = DDBDA88B2BE4198500C3570A /* SVGKit */; };
 		DDBDA88E2BE4198500C3570A /* SVGKitSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DDBDA88D2BE4198500C3570A /* SVGKitSwift */; };
 		DDBDA8962BE679DB00C3570A /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBDA8952BE679DB00C3570A /* DetailVC.swift */; };
@@ -54,6 +57,9 @@
 		DD6DEC102BE7D8B40081F383 /* CurrencyChangeCalculatorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyChangeCalculatorExtension.swift; sourceTree = "<group>"; };
 		DD6DEC122BE7DBD00081F383 /* DetailVCExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVCExtension.swift; sourceTree = "<group>"; };
 		DD6DEC142BE7DC050081F383 /* CriptoCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriptoCellExtension.swift; sourceTree = "<group>"; };
+		DD6DEC182BE7FD290081F383 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		DD6DEC192BE7FD290081F383 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		DD6DEC1A2BE7FD290081F383 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		DDBDA8952BE679DB00C3570A /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,6 +152,7 @@
 				DD16A3342BE3BCB700C1797C /* Main.storyboard */,
 				DD16A3392BE3BCB800C1797C /* LaunchScreen.storyboard */,
 				DD6DEC032BE7C4290081F383 /* Assets.xcassets */,
+				DD6DEC172BE7FD140081F383 /* Fonts */,
 				DD16A33C2BE3BCB800C1797C /* Info.plist */,
 			);
 			path = CriptoCurrency;
@@ -158,6 +165,16 @@
 				DD6DEC0C2BE7D8350081F383 /* StringToHexCode.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		DD6DEC172BE7FD140081F383 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				DD6DEC182BE7FD290081F383 /* Montserrat-Bold.ttf */,
+				DD6DEC192BE7FD290081F383 /* Montserrat-Regular.ttf */,
+				DD6DEC1A2BE7FD290081F383 /* OFL.txt */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		DDBDA8922BE4320100C3570A /* Extension */ = {
@@ -242,6 +259,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD6DEC1D2BE7FD290081F383 /* OFL.txt in Resources */,
+				DD6DEC1C2BE7FD290081F383 /* Montserrat-Regular.ttf in Resources */,
+				DD6DEC1B2BE7FD290081F383 /* Montserrat-Bold.ttf in Resources */,
 				DD060CA92BE3BF5600D3FCFC /* CriptoCell.xib in Resources */,
 				DD16A33B2BE3BCB800C1797C /* Base in Resources */,
 				DD6DEC042BE7C42A0081F383 /* Assets.xcassets in Resources */,

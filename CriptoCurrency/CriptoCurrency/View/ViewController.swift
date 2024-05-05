@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
     private var criptoViewModel = CriptoViewModel()
-    var selectedCoin : Coin?
+    var selectedCoin: Coin?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,12 +23,32 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         showLoadingView()
         getCriptoCurrency()
+        addLabelToNavigationBar()
+    }
+
+    private func addLabelToNavigationBar() {
+        // add label to navigation bar top left
+        let label = UILabel()
+        label.text = "Ranking List"
+        label.textColor = colorFromHex(hex: "0E1959")
+        label.font = UIFont(name: "Montserrat-Bold", size: 20)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: label)
     }
 
     private func addFilterButton() {
-        // price, marketCap, 24h Volume, change, listedAt filter dropdown button
-        let filterButton = UIBarButtonItem(image: UIImage(systemName: "line.horizontal.3.decrease.circle"), style: .plain, target: self, action: #selector(filterButtonTapped))
-        navigationItem.rightBarButtonItem = filterButton
+        // price, marketCap, 24h Volume, change, listedAt filter capsule button
+        let button = UIButton(type: .custom)
+        button.setTitle("Filter", for: .normal)
+        button.titleLabel?.font = UIFont(name: "Montserrat-Bold", size: 16)
+        button.frame = CGRect(x: 0, y: 0, width: 100, height: 30)
+        button.setTitleColor(colorFromHex(hex: "#6A61F2"), for: .normal)
+        button.backgroundColor = colorFromHex(hex: "#E8E7FF")
+        button.layer.cornerRadius = 16
+        button.layer.borderColor = colorFromHex(hex: "0E1959").cgColor
+        button.addTarget(self, action: #selector(filterButtonTapped), for: .touchUpInside)
+
+        let barButton = UIBarButtonItem(customView: button)
+        navigationItem.rightBarButtonItem = barButton
 
     }
 
@@ -123,3 +143,5 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         performSegue(withIdentifier: "toDetailVC", sender: criptoViewModel.criptoList[indexPath.row])
     }
 }
+
+extension ViewController: StringToHexCode { }
