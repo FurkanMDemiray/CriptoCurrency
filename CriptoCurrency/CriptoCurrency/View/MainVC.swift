@@ -15,18 +15,21 @@ class MainVC: UIViewController {
     private var criptoViewModel = CriptoViewModel()
     lazy var selectedCoin: Coin? = nil
     let dataSource = [
-        "Price By Incresing",
-        "Price By Decresing",
-        "Market Cap By Decresing",
-        "Market Cap By Increasing",
-        "Volume By Incresing",
-        "Volume By Decresing",
-        "Change By Incresing",
-        "Change By Decresing",
-        "Listed At By Incresing",
-        "Listed At By Decresing"
+        "Rank By ▲",
+        "Rank By ▼",
+        "Price By ▲",
+        "Price By ▼",
+        "Market Cap By ▲",
+        "Market Cap By ▼",
+        "Volume By ▲",
+        "Volume By ▼",
+        "Change By ▲",
+        "Change By ▼",
+        "Listed At By ▲",
+        "Listed At By ▼"
     ]
     var actionClosure: ((UIAction) -> Void)!
+    var selectedAction: UIAction?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,25 +55,26 @@ class MainVC: UIViewController {
     private func configureActionClosure() {
         actionClosure = { [weak self] action in
             guard let self = self else { return }
-            if action.title == "Price By Incresing" { self.criptoViewModel.filterByPriceIncreasing() }
-            if action.title == "Price By Decresing" { self.criptoViewModel.filterByPriceDecresing() }
-            if action.title == "Market Cap By Decresing" { self.criptoViewModel.filterByMarketCapDecresing() }
-            if action.title == "Market Cap By Increasing" { self.criptoViewModel.filterByMarketCapIncreasing() }
-            if action.title == "Volume By Incresing" { self.criptoViewModel.filterByVolumeIncreasing() }
-            if action.title == "Volume By Decresing" { self.criptoViewModel.filterByVolumeDecresing() }
-            if action.title == "Change By Incresing" { self.criptoViewModel.filterByChangeIncreasing() }
-            if action.title == "Change By Decresing" { self.criptoViewModel.filterByChangeDecresing() }
-            if action.title == "Listed At By Incresing" { self.criptoViewModel.filterByListedAtIncreasing() }
-            if action.title == "Listed At By Decresing" { self.criptoViewModel.filterByListedAtDecresing() }
+            if action.title == "Rank By ▲" { self.criptoViewModel.filterByRankIncreasing() }
+            if action.title == "Rank By ▼" { self.criptoViewModel.filterByRankDecresing() }
+            if action.title == "Price By ▲" { self.criptoViewModel.filterByPriceIncreasing() }
+            if action.title == "Price By ▼" { self.criptoViewModel.filterByPriceDecresing() }
+            if action.title == "Market Cap By ▼" { self.criptoViewModel.filterByMarketCapDecresing() }
+            if action.title == "Market Cap By ▲" { self.criptoViewModel.filterByMarketCapIncreasing() }
+            if action.title == "Volume By ▲" { self.criptoViewModel.filterByVolumeIncreasing() }
+            if action.title == "Volume By ▼" { self.criptoViewModel.filterByVolumeDecresing() }
+            if action.title == "Change By ▲" { self.criptoViewModel.filterByChangeIncreasing() }
+            if action.title == "Change By ▼" { self.criptoViewModel.filterByChangeDecresing() }
+            if action.title == "Listed At By ▲" { self.criptoViewModel.filterByListedAtIncreasing() }
+            if action.title == "Listed At By ▼" { self.criptoViewModel.filterByListedAtDecresing() }
+            selectedAction = action; print(selectedAction!.title)
             self.tableView.reloadData()
         }
     }
 
     private func configureFilterButton() {
-        button.setTitle("Price", for: .normal)
-        button.setImage(UIImage(named: "downArrow"), for: .normal)
         button.titleLabel?.font = UIFont(name: "Montserrat-Regular", size: 12)
-        button.frame = CGRect(x: 0, y: 0, width: 140, height: 30)
+        button.frame = CGRect(x: 0, y: 0, width: 130, height: 30)
         button.setTitleColor(colorFromHex(hex: "#6A61F2"), for: .normal)
         button.backgroundColor = colorFromHex(hex: "#E8E7FF")
         button.layer.cornerRadius = 16

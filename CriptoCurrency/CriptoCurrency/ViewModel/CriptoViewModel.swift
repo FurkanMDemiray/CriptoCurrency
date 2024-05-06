@@ -25,41 +25,72 @@ final class CriptoViewModel {
         }
     }
 
+    func filterByRankDecresing() {
+        criptoList = criptoList.sorted { $0.rank ?? 0 > $1.rank ?? 0 }
+    }
+
+    func filterByRankIncreasing() {
+        criptoList = criptoList.sorted { $0.rank ?? 0 < $1.rank ?? 0 }
+    }
+
     func filterByPriceDecresing() {
-        criptoList = criptoList.sorted { $0.price ?? "" > $1.price ?? "" }
+        criptoList = criptoList.sorted {
+            guard let price1 = Double($0.price ?? ""), let price2 = Double($1.price ?? "") else { return false }
+            return price1 > price2
+        }
     }
 
     func filterByPriceIncreasing() {
-        criptoList = criptoList.sorted { $0.price ?? "" < $1.price ?? "" }
+        criptoList = criptoList.sorted {
+            guard let price1 = Double($0.price ?? ""), let price2 = Double($1.price ?? "") else { return false }
+            return price1 < price2
+        }
     }
 
     func filterByMarketCapDecresing() {
-        criptoList = criptoList.sorted { $0.marketCap ?? "" > $1.marketCap ?? "" }
+        criptoList = criptoList.sorted {
+            guard let marketCap1 = Double($0.marketCap ?? ""), let marketCap2 = Double($1.marketCap ?? "") else { return false }
+            return marketCap1 > marketCap2
+        }
     }
 
     func filterByMarketCapIncreasing() {
-        criptoList = criptoList.sorted { $0.marketCap ?? "" < $1.marketCap ?? "" }
+        criptoList = criptoList.sorted {
+            guard let marketCap1 = Double($0.marketCap ?? ""), let marketCap2 = Double($1.marketCap ?? "") else { return false }
+            return marketCap1 < marketCap2
+        }
     }
 
     func filterByVolumeDecresing() {
-        criptoList = criptoList.sorted { $0.the24HVolume ?? "" > $1.the24HVolume ?? "" }
+        criptoList = criptoList.sorted {
+            guard let the24HVolume1 = Double($0.the24HVolume ?? ""), let the24HVolume2 = Double($1.the24HVolume ?? "") else { return false }
+            return the24HVolume1 > the24HVolume2
+        }
     }
 
     func filterByVolumeIncreasing() {
-        criptoList = criptoList.sorted { $0.the24HVolume ?? "" < $1.the24HVolume ?? "" }
+        criptoList = criptoList.sorted {
+            guard let the24HVolume1 = Double($0.the24HVolume ?? ""), let the24HVolume2 = Double($1.the24HVolume ?? "") else { return false }
+            return the24HVolume1 < the24HVolume2
+        }
     }
 
     func filterByChangeDecresing() {
-        criptoList = criptoList.sorted { $0.change ?? "" > $1.change ?? "" }
+        criptoList = criptoList.sorted {
+            guard let change1 = Double($0.change ?? ""), let change2 = Double($1.change ?? "") else { return false }
+            return change1 > change2
+        }
     }
 
     func filterByChangeIncreasing() {
-        criptoList = criptoList.sorted { $0.change ?? "" < $1.change ?? "" }
+        criptoList = criptoList.sorted {
+            guard let change1 = Double($0.change ?? ""), let change2 = Double($1.change ?? "") else { return false }
+            return change1 < change2
+        }
     }
 
     func filterByListedAtDecresing() {
         criptoList = criptoList.sorted { $0.listedAt ?? 0 > $1.listedAt ?? 0 }
-        print(criptoList)
     }
 
     func filterByListedAtIncreasing() {
