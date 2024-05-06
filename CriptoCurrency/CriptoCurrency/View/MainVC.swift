@@ -10,15 +10,29 @@ import UIKit
 class MainVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    let button = UIButton(type: .custom)
 
+    let button = UIButton(primaryAction: nil)
     private var criptoViewModel = CriptoViewModel()
     lazy var selectedCoin: Coin? = nil
+    let dataSource = [
+        "Price By Incresing",
+        "Price By Decresing",
+        "Market Cap By Decresing",
+        "Market Cap By Increasing",
+        "Volume By Incresing",
+        "Volume By Decresing",
+        "Change By Incresing",
+        "Change By Decresing",
+        "Listed At By Incresing",
+        "Listed At By Decresing"
+    ]
+    var actionClosure: ((UIAction) -> Void)!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
-        addFilterButton()
+        configureActionClosure()
+        configureFilterButton()
         addLabelToNavigationBar()
     }
 
@@ -35,15 +49,40 @@ class MainVC: UIViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: label)
     }
 
-    private func addFilterButton() {
+    private func configureActionClosure() {
+        actionClosure = { [weak self] action in
+            guard let self = self else { return }
+            if action.title == "Price By Incresing" { self.criptoViewModel.filterByPriceIncreasing() }
+            if action.title == "Price By Decresing" { self.criptoViewModel.filterByPriceDecresing() }
+            if action.title == "Market Cap By Decresing" { self.criptoViewModel.filterByMarketCapDecresing() }
+            if action.title == "Market Cap By Increasing" { self.criptoViewModel.filterByMarketCapIncreasing() }
+            if action.title == "Volume By Incresing" { self.criptoViewModel.filterByVolumeIncreasing() }
+            if action.title == "Volume By Decresing" { self.criptoViewModel.filterByVolumeDecresing() }
+            if action.title == "Change By Incresing" { self.criptoViewModel.filterByChangeIncreasing() }
+            if action.title == "Change By Decresing" { self.criptoViewModel.filterByChangeDecresing() }
+            if action.title == "Listed At By Incresing" { self.criptoViewModel.filterByListedAtIncreasing() }
+            if action.title == "Listed At By Decresing" { self.criptoViewModel.filterByListedAtDecresing() }
+            self.tableView.reloadData()
+        }
+    }
+
+    private func configureFilterButton() {
         button.setTitle("Price", for: .normal)
         button.setImage(UIImage(named: "downArrow"), for: .normal)
-        button.titleLabel?.font = UIFont(name: "Montserrat-Regular", size: 14)
-        button.frame = CGRect(x: 0, y: 0, width: 120, height: 30)
+        button.titleLabel?.font = UIFont(name: "Montserrat-Regular", size: 12)
+        button.frame = CGRect(x: 0, y: 0, width: 140, height: 30)
         button.setTitleColor(colorFromHex(hex: "#6A61F2"), for: .normal)
         button.backgroundColor = colorFromHex(hex: "#E8E7FF")
         button.layer.cornerRadius = 16
-        button.addTarget(self, action: #selector(filterButtonTapped), for: .touchUpInside)
+
+        var menuChildren: [UIMenuElement] = []
+        for fruit in dataSource {
+            menuChildren.append(UIAction(title: fruit, handler: actionClosure))
+        }
+
+        button.menu = UIMenu(options: .displayInline, children: menuChildren)
+        button.showsMenuAsPrimaryAction = true
+        button.changesSelectionAsPrimaryAction = true
 
         let barButton = UIBarButtonItem(customView: button)
         navigationItem.rightBarButtonItem = barButton
@@ -52,43 +91,6 @@ class MainVC: UIViewController {
     private func setTitleLabel(_ title: String) {
         self.button.setTitle(title, for: .normal)
         self.button.titleLabel?.font = UIFont(name: "Montserrat-Regular", size: 14)
-    }
-
-    @objc private func filterButtonTapped() {
-        let alert = UIAlertController(title: "Filter", message: "Filter by", preferredStyle: .alert)
-        let priceAction = UIAlertAction(title: "Price", style: .default) { _ in
-            self.criptoViewModel.filterByPrice()
-            self.setTitleLabel("Price")
-            self.tableView.reloadData()
-        }
-        let marketCapAction = UIAlertAction(title: "Market Cap", style: .default) { _ in
-            self.criptoViewModel.filterByMarketCap()
-            self.setTitleLabel("Market Cap")
-            self.tableView.reloadData()
-        }
-        let volumeAction = UIAlertAction(title: "24h Volume", style: .default) { _ in
-            self.criptoViewModel.filterByVolume()
-            self.setTitleLabel("24h Volume")
-            self.tableView.reloadData()
-        }
-        let changeAction = UIAlertAction(title: "Change", style: .default) { _ in
-            self.criptoViewModel.filterByChange()
-            self.setTitleLabel("Change")
-            self.tableView.reloadData()
-        }
-        let listedAtAction = UIAlertAction(title: "Listed At", style: .default) { _ in
-            self.criptoViewModel.filterByListedAt()
-            self.setTitleLabel("Listed At")
-            self.tableView.reloadData()
-        }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-        alert.addAction(priceAction)
-        alert.addAction(marketCapAction)
-        alert.addAction(volumeAction)
-        alert.addAction(changeAction)
-        alert.addAction(listedAtAction)
-        alert.addAction(cancelAction)
-        present(alert, animated: true)
     }
 
     private func configureTableView() {

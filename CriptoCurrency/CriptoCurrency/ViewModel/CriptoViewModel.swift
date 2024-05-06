@@ -25,24 +25,44 @@ final class CriptoViewModel {
         }
     }
 
-    func filterByPrice() {
+    func filterByPriceDecresing() {
+        criptoList = criptoList.sorted { $0.price ?? "" > $1.price ?? "" }
+    }
+
+    func filterByPriceIncreasing() {
         criptoList = criptoList.sorted { $0.price ?? "" < $1.price ?? "" }
     }
 
-    func filterByMarketCap() {
+    func filterByMarketCapDecresing() {
+        criptoList = criptoList.sorted { $0.marketCap ?? "" > $1.marketCap ?? "" }
+    }
+
+    func filterByMarketCapIncreasing() {
         criptoList = criptoList.sorted { $0.marketCap ?? "" < $1.marketCap ?? "" }
     }
 
-    func filterByVolume() {
+    func filterByVolumeDecresing() {
+        criptoList = criptoList.sorted { $0.the24HVolume ?? "" > $1.the24HVolume ?? "" }
+    }
+
+    func filterByVolumeIncreasing() {
         criptoList = criptoList.sorted { $0.the24HVolume ?? "" < $1.the24HVolume ?? "" }
     }
 
-    func filterByChange() {
+    func filterByChangeDecresing() {
+        criptoList = criptoList.sorted { $0.change ?? "" > $1.change ?? "" }
+    }
+
+    func filterByChangeIncreasing() {
         criptoList = criptoList.sorted { $0.change ?? "" < $1.change ?? "" }
     }
 
-    func filterByListedAt() {
-        criptoList = criptoList.sorted { $0.listedAt ?? 0 < $1.listedAt ?? 0 }
+    func filterByListedAtDecresing() {
+        criptoList = criptoList.sorted { $0.listedAt ?? 0 > $1.listedAt ?? 0 }
         print(criptoList)
+    }
+
+    func filterByListedAtIncreasing() {
+        criptoList = criptoList.sorted { $0.listedAt ?? 0 < $1.listedAt ?? 0 }
     }
 }
