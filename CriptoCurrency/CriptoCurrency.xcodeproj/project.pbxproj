@@ -32,6 +32,7 @@
 		DD6DEC1C2BE7FD290081F383 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD6DEC192BE7FD290081F383 /* Montserrat-Regular.ttf */; };
 		DD6DEC1D2BE7FD290081F383 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = DD6DEC1A2BE7FD290081F383 /* OFL.txt */; };
 		DD6DEC202BED151E0081F383 /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6DEC1F2BED151E0081F383 /* LineChart.swift */; };
+		DD6DEC222BED45030081F383 /* BarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6DEC212BED45030081F383 /* BarChart.swift */; };
 		DDBDA88C2BE4198500C3570A /* SVGKit in Frameworks */ = {isa = PBXBuildFile; productRef = DDBDA88B2BE4198500C3570A /* SVGKit */; };
 		DDBDA88E2BE4198500C3570A /* SVGKitSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DDBDA88D2BE4198500C3570A /* SVGKitSwift */; };
 		DDBDA8962BE679DB00C3570A /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBDA8952BE679DB00C3570A /* DetailVC.swift */; };
@@ -62,6 +63,7 @@
 		DD6DEC192BE7FD290081F383 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		DD6DEC1A2BE7FD290081F383 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		DD6DEC1F2BED151E0081F383 /* LineChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
+		DD6DEC212BED45030081F383 /* BarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChart.swift; sourceTree = "<group>"; };
 		DDBDA8952BE679DB00C3570A /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -184,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				DD6DEC1F2BED151E0081F383 /* LineChart.swift */,
+				DD6DEC212BED45030081F383 /* BarChart.swift */,
 			);
 			path = Chart;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				DD060CAD2BE3C40D00D3FCFC /* CriptoService.swift in Sources */,
 				DD6DEC0F2BE7D87B0081F383 /* StringToHexCodeExtension.swift in Sources */,
 				DD060CAB2BE3C1FB00D3FCFC /* CriptoCurrency.swift in Sources */,
+				DD6DEC222BED45030081F383 /* BarChart.swift in Sources */,
 				DD060CA82BE3BF5600D3FCFC /* CriptoCell.swift in Sources */,
 				DD6DEC202BED151E0081F383 /* LineChart.swift in Sources */,
 				DD6DEC0B2BE7D8180081F383 /* CurrencyChangeCalculator.swift in Sources */,

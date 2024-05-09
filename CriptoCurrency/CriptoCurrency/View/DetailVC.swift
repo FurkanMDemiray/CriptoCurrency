@@ -24,9 +24,10 @@ class DetailVC: UIViewController {
         super.viewDidLayoutSubviews()
         configureView()
         setLabels()
-        addLineChart()
+        //addLineChart()
+        addBarChart()
     }
-    
+
     private func configureView() {
         currencyVİew.layer.cornerRadius = 10
         currencyVİew.layer.borderWidth = 1
@@ -98,6 +99,26 @@ class DetailVC: UIViewController {
         lineChartView.dataEntries = dataEntries
         self.view.addSubview(lineChartView)
 
+    }
+
+    private func addBarChart() {
+        let screenHeight = UIScreen.main.bounds.height
+        let screenWidth = UIScreen.main.bounds.width
+        var barChartView: BarChartView!
+
+        if screenHeight < 750 {
+            barChartView = BarChartView(frame: CGRect(x: 0, y: screenHeight / 3, width: screenWidth, height: currencyVİew.frame.height * 3.5))
+        }
+        else {
+            barChartView = BarChartView(frame: CGRect(x: 0, y: screenHeight / 3, width: screenWidth, height: currencyVİew.frame.height * 4.2))
+        }
+
+        let sparkline = selectedCoin?.sparkline
+        let dataEntries = barChartView.convertToPointEntry(sparkline ?? [])
+
+        barChartView.backgroundColor = .white
+        barChartView.dataEntries = dataEntries
+        self.view.addSubview(barChartView)
     }
 }
 
