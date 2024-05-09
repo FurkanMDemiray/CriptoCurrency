@@ -17,15 +17,17 @@ class DetailVC: UIViewController {
     @IBOutlet weak var highLabel: UILabel!
     @IBOutlet weak var changeOfCurrencyLabel: UILabel!
     @IBOutlet weak var lowLabel: UILabel!
+    @IBOutlet weak var lineChartButton: UIButton!
+    @IBOutlet weak var barChartButton: UIButton!
 
+    var lineChartView: LineChart?
+    var barChartView: BarChartView?
     lazy var selectedCoin: Coin? = nil
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         configureView()
         setLabels()
-        //addLineChart()
-        addBarChart()
     }
 
     private func configureView() {
@@ -88,37 +90,45 @@ class DetailVC: UIViewController {
     }
 
     private func addLineChart() {
+        barChartView?.removeFromSuperview()
         let screenHight = UIScreen.main.bounds.height
         let screenWidth = UIScreen.main.bounds.width
-        let lineChartView = LineChart(frame: CGRect(x: 0, y: screenHight / 3, width: screenWidth, height: currencyVİew.frame.height * 4))
+
+        lineChartView = LineChart(frame: CGRect(x: 0, y: screenHight / 3, width: screenWidth, height: currencyVİew.frame.height * 4))
 
         let sparkline = selectedCoin?.sparkline
-        let dataEntries = lineChartView.convertToPointEntry(sparkline ?? [])
+        let dataEntries = lineChartView?.convertToPointEntry(sparkline ?? [])
 
-        lineChartView.backgroundColor = .white
-        lineChartView.dataEntries = dataEntries
-        self.view.addSubview(lineChartView)
-
+        lineChartView?.backgroundColor = .white
+        lineChartView?.dataEntries = dataEntries
+        self.view.addSubview(lineChartView ?? LineChart())
     }
 
     private func addBarChart() {
+        lineChartView?.removeFromSuperview()
         let screenHeight = UIScreen.main.bounds.height
         let screenWidth = UIScreen.main.bounds.width
-        var barChartView: BarChartView!
 
         if screenHeight < 750 {
-            barChartView = BarChartView(frame: CGRect(x: 0, y: screenHeight / 3, width: screenWidth, height: currencyVİew.frame.height * 3.5))
+            barChartView = BarChartView(frame: CGRect(x: 0, y: screenHeight / 2.7, width: screenWidth, height: currencyVİew.frame.height * 3.5))
         }
         else {
             barChartView = BarChartView(frame: CGRect(x: 0, y: screenHeight / 3, width: screenWidth, height: currencyVİew.frame.height * 4.2))
         }
 
         let sparkline = selectedCoin?.sparkline
-        let dataEntries = barChartView.convertToPointEntry(sparkline ?? [])
+        let dataEntries = barChartView?.convertToPointEntry(sparkline ?? [])
 
-        barChartView.backgroundColor = .white
-        barChartView.dataEntries = dataEntries
-        self.view.addSubview(barChartView)
+        barChartView?.backgroundColor = .white
+        barChartView?.dataEntries = dataEntries
+        self.view.addSubview(barChartView ?? BarChartView())
+    }
+
+    @IBAction func lineChartButtonClicked(_ sender: Any) {
+        addLineChart()
+    }
+    @IBAction func barChartButtonClicked(_ sender: Any) {
+        addBarChart()
     }
 }
 

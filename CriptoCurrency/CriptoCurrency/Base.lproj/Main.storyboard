@@ -140,6 +140,33 @@
                                     <action selector="backButtonClicked:" destination="Guv-TH-90Q" eventType="touchUpInside" id="1sA-vh-nSf"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="2XO-Xc-nXg">
+                                <rect key="frame" x="8" y="811.33333333333337" width="377" height="32.666666666666629"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aIr-Zi-9nh">
+                                        <rect key="frame" x="0.0" y="0.0" width="182.66666666666666" height="32.666666666666664"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Line Chart">
+                                            <fontDescription key="titleFontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="16"/>
+                                            <color key="baseBackgroundColor" red="0.054901960780000002" green="0.098039215690000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="lineChartButtonClicked:" destination="Guv-TH-90Q" eventType="touchUpInside" id="gh9-II-72W"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nno-js-tLN">
+                                        <rect key="frame" x="194.66666666666663" y="0.0" width="182.33333333333337" height="32.666666666666664"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Bar Chart">
+                                            <fontDescription key="titleFontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="16"/>
+                                            <color key="baseBackgroundColor" red="0.054901960780000002" green="0.098039215690000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="barChartButtonClicked:" destination="Guv-TH-90Q" eventType="touchUpInside" id="u3F-lN-8MY"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6HE-Eu-U57"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -151,8 +178,11 @@
                             <constraint firstItem="7kg-iF-9eb" firstAttribute="leading" secondItem="6HE-Eu-U57" secondAttribute="leading" constant="8" id="PLl-5M-ypG"/>
                             <constraint firstItem="6HE-Eu-U57" firstAttribute="trailing" secondItem="7kg-iF-9eb" secondAttribute="trailing" constant="8" id="QIg-Xi-n7i"/>
                             <constraint firstItem="bhT-8b-hQX" firstAttribute="leading" secondItem="6HE-Eu-U57" secondAttribute="leading" constant="8" id="UG8-jQ-9MA"/>
+                            <constraint firstItem="6HE-Eu-U57" firstAttribute="trailing" secondItem="2XO-Xc-nXg" secondAttribute="trailing" constant="8" id="Y23-ZK-2BL"/>
                             <constraint firstItem="7kg-iF-9eb" firstAttribute="top" secondItem="bhT-8b-hQX" secondAttribute="bottom" constant="32" id="bA2-H5-Y8H"/>
                             <constraint firstItem="4yB-Ve-4Ql" firstAttribute="top" secondItem="6HE-Eu-U57" secondAttribute="top" constant="8" id="fEd-sB-Jpr"/>
+                            <constraint firstItem="2XO-Xc-nXg" firstAttribute="leading" secondItem="6HE-Eu-U57" secondAttribute="leading" constant="8" id="inL-Cr-P0L"/>
+                            <constraint firstItem="6HE-Eu-U57" firstAttribute="bottom" secondItem="2XO-Xc-nXg" secondAttribute="bottom" constant="8" id="ovO-XO-dEd"/>
                             <constraint firstItem="6HE-Eu-U57" firstAttribute="trailing" secondItem="4yB-Ve-4Ql" secondAttribute="trailing" constant="8" id="sRW-oC-M1R"/>
                             <constraint firstItem="sdH-Vm-plV" firstAttribute="centerX" secondItem="olD-13-l4Z" secondAttribute="centerX" id="wPK-wQ-iLO"/>
                             <constraint firstItem="bhT-8b-hQX" firstAttribute="top" secondItem="4yB-Ve-4Ql" secondAttribute="bottom" constant="4" id="xM6-aM-LuB"/>
@@ -160,9 +190,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="RNQ-xx-wHC"/>
                     <connections>
+                        <outlet property="barChartButton" destination="Nno-js-tLN" id="5en-NH-zBx"/>
                         <outlet property="changeOfCurrencyLabel" destination="bXH-Q5-jbW" id="ont-JO-cDG"/>
                         <outlet property="currencyVİew" destination="7kg-iF-9eb" id="9sf-m4-fn3"/>
                         <outlet property="highLabel" destination="xQt-y1-Dyp" id="tud-Bu-ZMr"/>
+                        <outlet property="lineChartButton" destination="aIr-Zi-9nh" id="Shr-Hp-hso"/>
                         <outlet property="lowLabel" destination="OD7-Wy-77u" id="maY-Op-KHd"/>
                         <outlet property="nameLabel" destination="bhT-8b-hQX" id="aEx-HQ-wl8"/>
                         <outlet property="priceLabel" destination="8Fj-ne-SRw" id="ps4-wh-7qZ"/>

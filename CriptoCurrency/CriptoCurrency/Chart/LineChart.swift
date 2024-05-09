@@ -28,7 +28,7 @@ class LineChart: UIView {
         let minValue = dataEntries.min { $0.value < $1.value }?.value ?? 0
 
         let lineGraph = UIBezierPath()
-        UIColor.systemYellow.set()
+        UIColor.systemBlue.set()
 
         for (i, entry) in dataEntries.enumerated() {
             let x = getXPoint(index: i, totalEntries: dataEntries.count)

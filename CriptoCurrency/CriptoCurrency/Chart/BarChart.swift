@@ -18,18 +18,18 @@ class BarChartView: UIScrollView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        showsHorizontalScrollIndicator = true
+        subviews.forEach { $0.removeFromSuperview() }
+        showsHorizontalScrollIndicator = false
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        showsHorizontalScrollIndicator = true
+        showsHorizontalScrollIndicator = false
     }
 
     override func layoutSubviews() {
-        super.layoutSubviews()
-        subviews.forEach { $0.removeFromSuperview() }
 
+        super.layoutSubviews()
         guard let dataEntries = dataEntries else { return }
 
         let maxValue = dataEntries.max { $0.value < $1.value }?.value ?? 0
@@ -46,7 +46,7 @@ class BarChartView: UIScrollView {
 
             let barRect = CGRect(x: x, y: y, width: barWidth, height: barHeight)
             let barView = UIView(frame: barRect)
-            barView.backgroundColor = UIColor.blue
+            barView.backgroundColor = UIColor.systemBlue
             addSubview(barView)
 
             let valueLabel = UILabel()
