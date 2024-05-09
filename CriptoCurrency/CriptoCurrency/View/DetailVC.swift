@@ -20,17 +20,13 @@ class DetailVC: UIViewController {
 
     lazy var selectedCoin: Coin? = nil
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         configureView()
         setLabels()
+        addLineChart()
     }
-
+    
     private func configureView() {
         currencyVİew.layer.cornerRadius = 10
         currencyVİew.layer.borderWidth = 1
@@ -88,6 +84,20 @@ class DetailVC: UIViewController {
 
     @IBAction func backButtonClicked(_ sender: Any) {
         dismiss(animated: true)
+    }
+
+    private func addLineChart() {
+        let screenHight = UIScreen.main.bounds.height
+        let screenWidth = UIScreen.main.bounds.width
+        let lineChartView = LineChart(frame: CGRect(x: 0, y: screenHight / 3, width: screenWidth, height: currencyVİew.frame.height * 4))
+
+        let sparkline = selectedCoin?.sparkline
+        let dataEntries = lineChartView.convertToPointEntry(sparkline ?? [])
+
+        lineChartView.backgroundColor = .white
+        lineChartView.dataEntries = dataEntries
+        self.view.addSubview(lineChartView)
+
     }
 }
 
