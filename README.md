@@ -4,6 +4,20 @@
  
 Welcome to Cripto Currency. A simple cripto app that shows currencies.
 
+## Table of Contents
+- [Features](#features)
+  - [Screenshots](#screenshots)
+  - [Tech Stack](#tech-stack)
+  - [Architecture](#architecture)
+  - [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+- [Usage](#usage)
+  - [Listing - Cripto Currencies](#listing---cripto-currencies)
+  - [Coin Filtering](#coin-filtering)
+  - [Chart](#chart)
+- [Known Issues](#known-issues)
+- [Improvements](#improvements)
+
 ## Features
 
  **Currencies:**
@@ -80,3 +94,11 @@ Also, make sure that these dependencies are added in your project's target:
 <p align="left">
   <img src="https://github.com/FurkanMDemiray/TGYCriptoCurrency/blob/main/Gifs/charts.gif" alt="Listing" width="200" height="400">
 </p>
+
+## Known Issues
+- Since the changes in the prices of coins are very small and the fractions are high, it is not fully detailed to show the changes in the graphs by printing them.
+- Some change amounts are too small to be displayed on the main screen.
+
+## Improvements
+- Graphics can be made more beautiful and legible.
+- Localization for other languages can be added to be able to reach more user.
