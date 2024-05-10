@@ -16,8 +16,6 @@ class DetailVC: UIViewController {
     @IBOutlet weak var highLabel: UILabel!
     @IBOutlet weak var changeOfCurrencyLabel: UILabel!
     @IBOutlet weak var lowLabel: UILabel!
-    @IBOutlet weak var lineChartButton: UIButton!
-    @IBOutlet weak var barChartButton: UIButton!
 
     var lineChartView: LineChart?
     var barChartView: BarChartView?

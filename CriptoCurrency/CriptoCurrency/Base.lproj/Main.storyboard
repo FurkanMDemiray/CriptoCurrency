@@ -190,11 +190,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="RNQ-xx-wHC"/>
                     <connections>
-                        <outlet property="barChartButton" destination="Nno-js-tLN" id="5en-NH-zBx"/>
                         <outlet property="changeOfCurrencyLabel" destination="bXH-Q5-jbW" id="ont-JO-cDG"/>
                         <outlet property="currencyVİew" destination="7kg-iF-9eb" id="9sf-m4-fn3"/>
                         <outlet property="highLabel" destination="xQt-y1-Dyp" id="tud-Bu-ZMr"/>
-                        <outlet property="lineChartButton" destination="aIr-Zi-9nh" id="Shr-Hp-hso"/>
                         <outlet property="lowLabel" destination="OD7-Wy-77u" id="maY-Op-KHd"/>
                         <outlet property="nameLabel" destination="bhT-8b-hQX" id="aEx-HQ-wl8"/>
                         <outlet property="priceLabel" destination="8Fj-ne-SRw" id="ps4-wh-7qZ"/>
