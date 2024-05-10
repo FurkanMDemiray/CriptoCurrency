@@ -29,7 +29,6 @@ class MainVC: UIViewController {
         "Listed At By ▼"
     ]
     var actionClosure: ((UIAction) -> Void)!
-    var selectedAction: UIAction?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,12 +36,8 @@ class MainVC: UIViewController {
         configureActionClosure()
         configureFilterButton()
         addLabelToNavigationBar()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
         showLoadingView()
         getCriptoCurrency()
-        getSelectedAction()
     }
 
     private func addLabelToNavigationBar() {
@@ -51,14 +46,6 @@ class MainVC: UIViewController {
         label.textColor = colorFromHex(hex: "0E1959")
         label.font = UIFont(name: "Montserrat-Bold", size: 20)
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: label)
-    }
-
-    private func getSelectedAction() {
-        if let storedAction = UserDefaults.standard.string(forKey: "SelectedAction") {
-            print(storedAction)
-            selectedAction = UIAction(title: storedAction, handler: actionClosure)
-            tableView.reloadData()
-        }
     }
 
     private func configureActionClosure() {
@@ -76,8 +63,6 @@ class MainVC: UIViewController {
             if action.title == "Change By ▼" { self.criptoViewModel.filterByChangeDecresing() }
             if action.title == "Listed At By ▲" { self.criptoViewModel.filterByListedAtIncreasing() }
             if action.title == "Listed At By ▼" { self.criptoViewModel.filterByListedAtDecresing() }
-            selectedAction = action; print(selectedAction!.title)
-            UserDefaults.standard.set(selectedAction?.title, forKey: "SelectedAction")
             self.tableView.reloadData()
         }
     }
