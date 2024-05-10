@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class BarChartView: UIScrollView {
+final class BarChartView: UIScrollView {
 
     var dataEntries: [PointEntry]? {
         didSet {

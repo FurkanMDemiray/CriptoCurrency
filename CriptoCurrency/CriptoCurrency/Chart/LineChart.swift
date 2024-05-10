@@ -13,7 +13,7 @@ struct PointEntry {
     let label: String
 }
 
-class LineChart: UIView {
+final class LineChart: UIView {
 
     var dataEntries: [PointEntry]? {
         didSet {
