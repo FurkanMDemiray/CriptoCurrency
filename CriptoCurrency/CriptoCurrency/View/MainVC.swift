@@ -142,6 +142,15 @@ extension MainVC: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CriptoCell", for: indexPath) as! CriptoCell
+        if criptoViewModel.criptoList[indexPath.row].name?.count ?? 0 > 20 {
+            cell.currencyFullName.font = UIFont.boldSystemFont(ofSize: 12)
+            if UIScreen.main.bounds.width < 390 {
+                cell.currencyFullName.font = UIFont.boldSystemFont(ofSize: 10)
+            }
+        }
+        else {
+            cell.currencyFullName.font = UIFont.boldSystemFont(ofSize: 17)
+        }
         cell.configureCell(with: criptoViewModel.criptoList[indexPath.row])
         return cell
     }

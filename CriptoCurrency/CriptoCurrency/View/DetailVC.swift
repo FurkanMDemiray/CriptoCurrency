@@ -48,11 +48,27 @@ class DetailVC: UIViewController {
         let highText = "High: "
         let lowText = "Low: "
 
-        let highAttributedString = NSMutableAttributedString(string: "\(highText)\(formatter.string(from: NSDecimalNumber(string: highValue)) ?? "")")
+        let doubleHighValue = Double(highValue ?? "0.0")
+        let doubleLowValue = Double(lowValue ?? "0.0")
+
+        var highAttributedString: NSMutableAttributedString
+        var lowAttributedString: NSMutableAttributedString
+
+        if isSingleDigitLeftOfDecimal(doubleHighValue ?? 0.0) {
+            highAttributedString = NSMutableAttributedString(string: "\(highText)\(oneDigitFormatter.string(from: NSDecimalNumber(string: highValue)) ?? "")")
+        }
+        else {
+            highAttributedString = NSMutableAttributedString(string: "\(highText)\(formatter.string(from: NSDecimalNumber(string: highValue)) ?? "")")
+        }
         highAttributedString.addAttribute(.foregroundColor, value: normalColor, range: NSRange(location: 0, length: highText.count))
         highAttributedString.addAttribute(.foregroundColor, value: highValueColor, range: NSRange(location: highText.count, length: highAttributedString.length - highText.count))
 
-        let lowAttributedString = NSMutableAttributedString(string: "\(lowText)\(formatter.string(from: NSDecimalNumber(string: lowValue)) ?? "")")
+        if isSingleDigitLeftOfDecimal(doubleLowValue ?? 0.0) {
+            lowAttributedString = NSMutableAttributedString(string: "\(lowText)\(oneDigitFormatter.string(from: NSDecimalNumber(string: lowValue)) ?? "")")
+        }
+        else {
+            lowAttributedString = NSMutableAttributedString(string: "\(lowText)\(formatter.string(from: NSDecimalNumber(string: lowValue)) ?? "")")
+        }
         lowAttributedString.addAttribute(.foregroundColor, value: normalColor, range: NSRange(location: 0, length: lowText.count))
         lowAttributedString.addAttribute(.foregroundColor, value: lowValueColor, range: NSRange(location: lowText.count, length: lowAttributedString.length - lowText.count))
 
@@ -69,11 +85,13 @@ class DetailVC: UIViewController {
             nameLabel.text = name
         }
         if let price = selectedCoin?.price {
-            priceLabel.text = formatter.string(from: NSDecimalNumber(string: price))
-        }
-        if let price = selectedCoin?.price {
             let priceDouble = Double(price)
-            priceLabel.text = formatter.string(from: NSDecimalNumber(value: priceDouble ?? 0.0))
+            if isSingleDigitLeftOfDecimal(priceDouble ?? 0.0) {
+                priceLabel.text = oneDigitFormatter.string(from: NSDecimalNumber(value: priceDouble ?? 0.0))
+            }
+            else {
+                priceLabel.text = formatter.string(from: NSDecimalNumber(value: priceDouble ?? 0.0))
+            }
             if let change = selectedCoin?.change {
                 let (changeOfCurrencyInDollar, color) = calculateChangeOfCurrencyInDollar(change: change, price: priceDouble ?? 0.0)
                 changeOfCurrencyLabel.text = changeOfCurrencyInDollar

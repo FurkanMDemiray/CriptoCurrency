@@ -33,8 +33,6 @@
 		DD6DEC1D2BE7FD290081F383 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = DD6DEC1A2BE7FD290081F383 /* OFL.txt */; };
 		DD6DEC202BED151E0081F383 /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6DEC1F2BED151E0081F383 /* LineChart.swift */; };
 		DD6DEC222BED45030081F383 /* BarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6DEC212BED45030081F383 /* BarChart.swift */; };
-		DDBDA88C2BE4198500C3570A /* SVGKit in Frameworks */ = {isa = PBXBuildFile; productRef = DDBDA88B2BE4198500C3570A /* SVGKit */; };
-		DDBDA88E2BE4198500C3570A /* SVGKitSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DDBDA88D2BE4198500C3570A /* SVGKitSwift */; };
 		DDBDA8962BE679DB00C3570A /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBDA8952BE679DB00C3570A /* DetailVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -74,8 +72,6 @@
 			files = (
 				DD060CA52BE3BF3900D3FCFC /* Kingfisher in Frameworks */,
 				DD060CA02BE3BEFC00D3FCFC /* Alamofire in Frameworks */,
-				DDBDA88E2BE4198500C3570A /* SVGKitSwift in Frameworks */,
-				DDBDA88C2BE4198500C3570A /* SVGKit in Frameworks */,
 				DD060CA22BE3BEFC00D3FCFC /* AlamofireDynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,8 +219,6 @@
 				DD060C9F2BE3BEFC00D3FCFC /* Alamofire */,
 				DD060CA12BE3BEFC00D3FCFC /* AlamofireDynamic */,
 				DD060CA42BE3BF3900D3FCFC /* Kingfisher */,
-				DDBDA88B2BE4198500C3570A /* SVGKit */,
-				DDBDA88D2BE4198500C3570A /* SVGKitSwift */,
 			);
 			productName = CriptoCurrency;
 			productReference = DD16A32B2BE3BCB700C1797C /* CriptoCurrency.app */;
@@ -257,7 +251,6 @@
 			packageReferences = (
 				DD060C9E2BE3BEFC00D3FCFC /* XCRemoteSwiftPackageReference "Alamofire" */,
 				DD060CA32BE3BF3900D3FCFC /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				DDBDA88A2BE4198500C3570A /* XCRemoteSwiftPackageReference "SVGKit" */,
 			);
 			productRefGroup = DD16A32C2BE3BCB700C1797C /* Products */;
 			projectDirPath = "";
@@ -555,14 +548,6 @@
 				minimumVersion = 7.11.0;
 			};
 		};
-		DDBDA88A2BE4198500C3570A /* XCRemoteSwiftPackageReference "SVGKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SVGKit/SVGKit";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -580,16 +565,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DD060CA32BE3BF3900D3FCFC /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
-		};
-		DDBDA88B2BE4198500C3570A /* SVGKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DDBDA88A2BE4198500C3570A /* XCRemoteSwiftPackageReference "SVGKit" */;
-			productName = SVGKit;
-		};
-		DDBDA88D2BE4198500C3570A /* SVGKitSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DDBDA88A2BE4198500C3570A /* XCRemoteSwiftPackageReference "SVGKit" */;
-			productName = SVGKitSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

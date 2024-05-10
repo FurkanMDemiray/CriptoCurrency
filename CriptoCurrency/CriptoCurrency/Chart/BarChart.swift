@@ -35,8 +35,8 @@ class BarChartView: UIScrollView {
         let maxValue = dataEntries.max { $0.value < $1.value }?.value ?? 0
         let minValue = dataEntries.min { $0.value < $1.value }?.value ?? 0
 
-        let barWidth: CGFloat = 20
-        let padding: CGFloat = 8
+        let barWidth: CGFloat = 24
+        let padding: CGFloat = 12
         var contentWidth: CGFloat = padding
 
         for (i, entry) in dataEntries.enumerated() {
@@ -54,8 +54,12 @@ class BarChartView: UIScrollView {
             valueLabel.numberOfLines = 0
             valueLabel.font = UIFont.systemFont(ofSize: 10)
             valueLabel.textColor = UIColor.black
-            valueLabel.text = String(format: "%.2f", entry.value)
-            valueLabel.frame = CGRect(x: x, y: y - 45, width: 30, height: 56)
+            if minValue < 1 || maxValue < 1 {
+                valueLabel.text = String(format: "%.5f", minValue)
+            } else {
+                valueLabel.text = String(format: "%.2f", minValue)
+            }
+            valueLabel.frame = CGRect(x: x, y: y - 45, width: 34, height: 56)
             addSubview(valueLabel)
 
             contentWidth += barWidth + padding

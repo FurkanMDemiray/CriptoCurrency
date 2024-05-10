@@ -42,7 +42,12 @@ class CriptoCell: UITableViewCell {
         }
         if let price = coins.price {
             let priceDouble = Double(price)
-            currencyValue.text = formatter.string(from: NSDecimalNumber(value: priceDouble ?? 0.0))
+            if isSingleDigitLeftOfDecimal(priceDouble ?? 0.0) {
+                currencyValue.text = oneDigitFormatter.string(from: NSNumber(value: priceDouble ?? 0.0))
+            }
+            else {
+                currencyValue.text = formatter.string(from: NSNumber(value: priceDouble ?? 0.0))
+            }
             if let change = coins.change {
                 let (changeOfCurrencyInDollar, color) = calculateChangeOfCurrencyInDollar(change: change, price: priceDouble ?? 0.0)
                 changeOfCurrency.text = changeOfCurrencyInDollar

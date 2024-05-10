@@ -77,14 +77,22 @@ class LineChart: UIView {
         minValueLabel.textAlignment = .left
         minValueLabel.font = UIFont.systemFont(ofSize: 10)
         minValueLabel.textColor = UIColor.black
-        minValueLabel.text = String(format: "%.2f", minValue)
+        if minValue < 1 {
+            minValueLabel.text = String(format: "%.5f", minValue)
+        } else {
+            minValueLabel.text = String(format: "%.2f", minValue)
+        }
         addSubview(minValueLabel)
 
         let maxValueLabel = UILabel(frame: CGRect(x: xStartPoint.x, y: maxValueY - 24, width: 80, height: 15))
         maxValueLabel.textAlignment = .left
         maxValueLabel.font = UIFont.systemFont(ofSize: 10)
         maxValueLabel.textColor = UIColor.black
-        maxValueLabel.text = String(format: "%.2f", maxValue)
+        if maxValue < 1 {
+            maxValueLabel.text = String(format: "%.5f", maxValue)
+        } else {
+            maxValueLabel.text = String(format: "%.2f", maxValue)
+        }
         addSubview(maxValueLabel)
 
         axisPath.move(to: CGPoint(x: padding, y: 20))

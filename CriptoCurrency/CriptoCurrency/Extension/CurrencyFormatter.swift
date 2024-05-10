@@ -12,7 +12,15 @@ extension NumberFormatter {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
         formatter.maximumFractionDigits = 2
-        formatter.currencySymbol = "$"        
+        formatter.currencySymbol = "$"
+        return formatter
+    }
+
+    static func oneDigitCurrencyFormatter() -> NumberFormatter {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.maximumFractionDigits = 5
+        formatter.currencySymbol = "$"
         return formatter
     }
 }
