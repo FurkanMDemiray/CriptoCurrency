@@ -1,8 +1,8 @@
 <div align="center">
-  <h1>Cripto Currency TGY Puanlı Ödev 2</h1>
+  <h1>Crypto Currency TGY Puanlı Ödev 2</h1>
 </div>
  
-Welcome to Cripto Currency. A simple cripto app that shows currencies.
+Welcome to Crypto Currency. A simple crypto app that shows currencies.
 
 ## Table of Contents
 - [Features](#features)
@@ -12,7 +12,7 @@ Welcome to Cripto Currency. A simple cripto app that shows currencies.
   - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
 - [Usage](#usage)
-  - [Listing - Cripto Currencies](#listing---cripto-currencies)
+  - [Listing - Crypto Currencies](#listing---crypto-currencies)
   - [Coin Filtering](#coin-filtering)
   - [Chart](#chart)
 - [Known Issues](#known-issues)
@@ -48,7 +48,7 @@ Welcome to Cripto Currency. A simple cripto app that shows currencies.
 
 ![Architecture](https://devnot.com/wp-content/uploads/2015/01/mvvm-pattern.gif)
 
-In developing Cripto Currencies Project, MVVM (Model-View-View Model) architecture is used.
+In developing Crypto Currencies Project, MVVM (Model-View-View Model) architecture is used.
 
 ## Getting Started
 
@@ -65,7 +65,7 @@ Also, make sure that these dependencies are added in your project's target:
 
 ## Usage
 
-###  Listing - Cripto Currencies
+###  Listing - Crypto Currencies
 
 1. Open the app on your simulator or device.
 2. Browse and analyse the coins.
@@ -79,7 +79,7 @@ Also, make sure that these dependencies are added in your project's target:
 
 ### Coin Filtering 
 
-1. Click filter button to filter the cripto currencies.
+1. Click filter button to filter the crypto currencies.
 
    <p align="left">
   <img src="https://github.com/FurkanMDemiray/TGYCriptoCurrency/blob/main/Gifs/filtering.gif" alt="Listing" width="200" height="400">
