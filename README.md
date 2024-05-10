@@ -31,10 +31,11 @@ Welcome to Crypto Currency. A simple crypto app that shows currencies.
 
 ## Screenshots
 
-| Image 1                | Image 2                | Image 3                |
-|------------------------|------------------------|------------------------|
-| ![Main](https://github.com/FurkanMDemiray/TGYCriptoCurrency/blob/main/Gifs/main.gif )  | ![Filtering](https://github.com/FurkanMDemiray/TGYCriptoCurrency/blob/main/Gifs/filtering.gif) | ![Detail](https://github.com/FurkanMDemiray/TGYCriptoCurrency/blob/main/Gifs/charts.gif) |
-| Currencies   | Filtering    | Charts    |
+| Image 1 | Image 2 | Image 3 |
+|:-------:|:-------:|:-------:|
+| <img src="https://github.com/FurkanMDemiray/TGYCriptoCurrency/blob/main/Gifs/main.gif" width="300"> | <img src="https://github.com/FurkanMDemiray/TGYCriptoCurrency/blob/main/Gifs/filtering.gif" width="300"> | <img src="https://github.com/FurkanMDemiray/TGYCriptoCurrency/blob/main/Gifs/charts.gif" width="300"> |
+| Currencies | Filtering | Charts |
+
 
 
 ## Tech Stack
