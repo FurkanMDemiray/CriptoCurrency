@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>Crypto Currency TGY Puanlı Ödev 2</h1>
+  <h1>Crypto Currency</h1>
 </div>
  
 Welcome to Crypto Currency. A simple crypto app that shows currencies.
